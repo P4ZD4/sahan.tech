@@ -1,9 +1,4 @@
-import {
-    createContext,
-    useContext,
-    useEffect,
-    useState
-} from 'react'
+import { createContext, useContext, useEffect, useState } from 'react'
 
 type ThemeProviderProps = {
     children: React.ReactNode
@@ -23,8 +18,7 @@ const initialState: ThemeProviderState = {
     }
 }
 
-const ThemeProviderContext =
-    createContext<ThemeProviderState>(initialState)
+const ThemeProviderContext = createContext<ThemeProviderState>(initialState)
 
 export function ThemeProvider({
     children,
@@ -32,12 +26,8 @@ export function ThemeProvider({
     storageKey = 'vite-ui-theme',
     ...props
 }: ThemeProviderProps) {
-    const [isDarkMode, setIsDarkMode] = useState<
-        boolean | undefined
-    >(
-        () =>
-            localStorage.getItem(storageKey) === 'true' ||
-            isDefaultDarkMode
+    const [isDarkMode, setIsDarkMode] = useState<boolean | undefined>(
+        () => localStorage.getItem(storageKey) === 'true' || isDefaultDarkMode
     )
 
     useEffect(() => {
@@ -46,9 +36,7 @@ export function ThemeProvider({
         root.classList.remove('light', 'dark')
 
         if (isDarkMode === undefined) {
-            const systemTheme = window.matchMedia(
-                '(prefers-color-scheme: dark)'
-            ).matches
+            const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches
                 ? 'dark'
                 : 'light'
 
@@ -62,19 +50,13 @@ export function ThemeProvider({
     const value = {
         isDarkMode,
         toggleTheme: () => {
-            localStorage.setItem(
-                storageKey,
-                (!isDarkMode).toString()
-            )
+            localStorage.setItem(storageKey, (!isDarkMode).toString())
             setIsDarkMode((mode) => !mode)
         }
     }
 
     return (
-        <ThemeProviderContext.Provider
-            {...props}
-            value={value}
-        >
+        <ThemeProviderContext.Provider {...props} value={value}>
             {children}
         </ThemeProviderContext.Provider>
     )
@@ -83,10 +65,7 @@ export function ThemeProvider({
 export const useTheme = () => {
     const context = useContext(ThemeProviderContext)
 
-    if (context === undefined)
-        throw new Error(
-            'useTheme must be used within a ThemeProvider'
-        )
+    if (context === undefined) throw new Error('useTheme must be used within a ThemeProvider')
 
     return context
 }

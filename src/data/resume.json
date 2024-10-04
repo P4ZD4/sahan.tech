@@ -8,7 +8,7 @@
         "linkedin": "https://www.linkedin.com/in/sahanratnayake/",
         "repo": ""
     },
-    "summary": "Dynamic and results-driven developer with over 9 years of experience in creating robust back-end systems using .NET Core and Python, as well as building full-stack applications with React and Next.js. Proficient in utilizing testing tools to ensure high-quality deliverables.Eager to leverage my expertise and collaborate with a talented team to drive innovation and tackle new challenges.",
+    "summary": "Dynamic and results-driven developer with <strong>over 9 years of experience</strong> in creating robust back-end systems using <strong>.NET Core</strong> and <strong>Python</strong>, as well as building full-stack applications with <strong>Next.js</strong> and <strong>React</strong>. Proficient in utilizing testing tools to ensure high-quality deliverables.</br></br>Eager to leverage my expertise and collaborate with a talented team to drive innovation and tackle new challenges.",
     "experience": [
         {
             "company": {
@@ -26,11 +26,7 @@
                 "Led platform migration, increasing daily page views by 300% to 4 million while maintaining stability and controlling costs.",
                 "Developed site components that visualized news data, significantly enhancing user engagement and comprehension."
             ],
-            "stack": [
-                "Next.js",
-                "AWS AppSync & Lambda",
-                "PostgreSQL"
-            ]
+            "stack": ["Next.js", "AWS AppSync & Lambda", "PostgreSQL"]
         },
         {
             "company": {
@@ -65,12 +61,7 @@
                 "Served as backend lead for developing an analytical tool that processed data from hundreds of savings groups, enabling rapid trend visualization and prediction.",
                 "Collaborated with cross-functional teams to drive data-driven decisions, enhancing organizational effectiveness."
             ],
-            "stack": [
-                "Python Flask",
-                "MongoDB",
-                "React.js",
-                "Apache Cassandra"
-            ]
+            "stack": ["Python Flask", "MongoDB", "React.js", "Apache Cassandra"]
         },
         {
             "company": {
@@ -141,11 +132,7 @@
             "key_achievements": [
                 "Developed a device warranty management system, gaining hands-on experience with production-level projects."
             ],
-            "stack": [
-                ".NET Standard",
-                "Angular",
-                "SQL Server"
-            ]
+            "stack": [".NET Standard", "Angular", "SQL Server"]
         },
         {
             "company": {

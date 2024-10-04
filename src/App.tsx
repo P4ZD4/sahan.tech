@@ -8,25 +8,25 @@ import Projects from '@/components/projects'
 import Skills from '@/components/skills'
 import Contact from '@/components/contact'
 
+import Resume from '@/data/resume.json'
+
 function App() {
     const { toggleTheme } = useTheme()
+    const resume = Resume
 
     return (
         <>
-            <Toggle
-                className="fixed top-0 right-0 m-4 p-0 h-8 w-8"
-                onClick={() => toggleTheme()}
-            >
+            <Toggle className="fixed top-0 right-0 m-4 p-0 h-8 w-8" onClick={() => toggleTheme()}>
                 <SunMoon color="var(--foreground)" />
             </Toggle>
 
             <Menu />
-            <>
-                <About />
+            <div className="ml-[15rem]">
+                <About {...resume} />
                 <Projects />
                 <Skills />
                 <Contact />
-            </>
+            </div>
         </>
     )
 }

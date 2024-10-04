@@ -1,12 +1,10 @@
 function Section({
     title,
-    children
-}: React.PropsWithChildren<{ title: string }>) {
+    children,
+    className = undefined
+}: React.PropsWithChildren<{ title: string; className?: string }>) {
     return (
-        <div
-            id={title}
-            className="h-screen"
-        >
+        <div id={title} className={`h-screen content-center ${className}`}>
             {children}
         </div>
     )
