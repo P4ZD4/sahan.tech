@@ -46,7 +46,7 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #1c1c1c;
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -73,12 +73,12 @@ button:focus-visible {
 
 @layer base {
   :root {
-    --background: white;
-    --foreground: #1a1a1a;
+    --background: #eeeeee;
+    --foreground: #1c1c1c;
     --card: 0 0% 100%;
-    --card-foreground: #1a1a1a;
+    --card-foreground: #1c1c1c;
     --popover: 0 0% 100%;
-    --popover-foreground: #1a1a1a;
+    --popover-foreground: #1c1c1c;
     --primary: 220.9 39.3% 11%;
     --primary-foreground: 210 20% 98%;
     --secondary: 220 14.3% 95.9%;
@@ -91,7 +91,7 @@ button:focus-visible {
     --destructive-foreground: 210 20% 98%;
     --border: 220 13% 91%;
     --input: 220 13% 91%;
-    --ring: #1a1a1a;
+    --ring: #1c1c1c;
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
     --chart-3: 197 37% 24%;
@@ -100,11 +100,11 @@ button:focus-visible {
     --radius: 0.5rem;
   }
   .dark {
-    --background: #1a1a1a;
-    --foreground: white;
-    --card: #1a1a1a;
+    --background: #1c1c1c;
+    --foreground: #eeeeee;
+    --card: #1c1c1c;
     --card-foreground: 210 20% 98%;
-    --popover: #1a1a1a;
+    --popover: #1c1c1c;
     --popover-foreground: 210 20% 98%;
     --primary: 210 20% 98%;
     --primary-foreground: 220.9 39.3% 11%;
