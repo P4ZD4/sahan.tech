@@ -6,7 +6,6 @@ import Menu from '@/components/navigation/menu'
 import About from '@/components/about'
 import Projects from '@/components/projects'
 import Skills from '@/components/skills'
-import Contact from '@/components/contact'
 
 import Resume from '@/data/resume.json'
 
@@ -16,16 +15,18 @@ function App() {
 
     return (
         <>
-            <Toggle className="fixed top-0 right-0 m-4 p-0 h-8 w-8" onClick={() => toggleTheme()}>
+            <Toggle
+                className="fixed top-0 right-0 m-4 p-0 h-8 w-8 z-10 bg-[color:--background]"
+                onClick={() => toggleTheme()}
+            >
                 <SunMoon color="var(--foreground)" />
             </Toggle>
 
             <Menu />
-            <div className="ml-[15rem]">
+            <div className="lg:ml-[15rem] px-10">
                 <About {...resume} />
-                <Projects />
+                <Projects projects={resume.experience} />
                 <Skills />
-                <Contact />
             </div>
         </>
     )

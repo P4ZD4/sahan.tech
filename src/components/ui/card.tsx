@@ -6,7 +6,7 @@ const Card = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElemen
     ({ className, ...props }, ref) => (
         <div
             ref={ref}
-            className={cn('border bg-card text-card-foreground shadow', className)}
+            className={cn('pb-3 border bg-card text-card-foreground shadow', className)}
             {...props}
         />
     )
@@ -17,7 +17,7 @@ const CardHeader = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDiv
     ({ className, ...props }, ref) => (
         <div
             ref={ref}
-            className={cn('flex flex-col space-y-1.5 p-3 leading-4', className)}
+            className={cn('flex flex-col space-y-1.5 pb-3 leading-4', className)}
             {...props}
         />
     )
@@ -26,7 +26,11 @@ CardHeader.displayName = 'CardHeader'
 
 const CardTitle = React.forwardRef<HTMLParagraphElement, React.HTMLAttributes<HTMLHeadingElement>>(
     ({ className, ...props }, ref) => (
-        <h3 ref={ref} className={cn('font-semibold tracking-tight', className)} {...props} />
+        <h3
+            ref={ref}
+            className={cn('font-semibold pt-3 px-3 tracking-tight', className)}
+            {...props}
+        />
     )
 )
 CardTitle.displayName = 'CardTitle'
@@ -35,7 +39,7 @@ const CardDescription = React.forwardRef<
     HTMLParagraphElement,
     React.HTMLAttributes<HTMLParagraphElement>
 >(({ className, ...props }, ref) => (
-    <p ref={ref} className={cn('text-sm text-muted-foreground', className)} {...props} />
+    <p ref={ref} className={cn('text-sm px-3 text-muted-foreground !mt-0', className)} {...props} />
 ))
 CardDescription.displayName = 'CardDescription'
 
@@ -46,4 +50,11 @@ const CardContent = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDi
 )
 CardContent.displayName = 'CardContent'
 
-export { Card, CardHeader, CardTitle, CardDescription, CardContent }
+const CardFooter = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
+    ({ className, ...props }, ref) => (
+        <div ref={ref} className={cn('flex items-center p-3 pt-0', className)} {...props} />
+    )
+)
+CardFooter.displayName = 'CardFooter'
+
+export { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter }

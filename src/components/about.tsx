@@ -2,7 +2,7 @@ import Section from '@/components/section'
 import { Github, Linkedin, Mail, MapPinHouse, Phone } from 'lucide-react'
 import ProfilePicture from '@/data/profile-picture.webp'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { PropsWithChildren } from 'react'
+import { RoundIconContactLink, TextContactLink } from '@/components/contact'
 
 interface ContactProps {
     email: string
@@ -28,15 +28,15 @@ interface AboutProps {
 
 function About({ name, role, contact, summary, education }: AboutProps) {
     return (
-        <Section title="about-me" className="font-mono text-[color:--foreground] text-left">
-            <div className="flex flex-row gap-8">
-                <div className="flex flex-col gap-4 max-w-[36rem]">
-                    <div className="flex flex-row gap-4">
-                        <div className="w-3/5">
+        <Section title="about-me" className="content-center">
+            <div className="flex flex-col md:flex-row gap-8">
+                <div className="flex flex-col gap-4 basis-[80%]">
+                    <div className="flex flex-row max-[500px]:flex-col gap-4">
+                        <div className="basis-[60%]">
                             <img
                                 src={ProfilePicture}
                                 alt="Profile Picture"
-                                className="max-w-100 border bg-card text-card-foreground shadow"
+                                className="max-w-100 max-[500px]:max-w-[16rem] border bg-card text-card-foreground shadow"
                             />
                         </div>
                         <div className="content-end">
@@ -89,12 +89,12 @@ const Contact = ({
     repo
 }: { name: string; role: string } & ContactProps) => {
     return (
-        <Card className="">
-            <CardHeader>
+        <Card className="pb-0">
+            <CardHeader className="gap-1">
                 <CardTitle className="text-2xl leading-6">{name}</CardTitle>
                 <CardDescription className="text-base leading-4">{role}</CardDescription>
             </CardHeader>
-            <CardContent className="leading-6 font-center">
+            <CardContent className="leading-6 font-center pb-0">
                 <p className="flex items-center">
                     <Mail size={16} />
                     <TextContactLink link={`mailto:${email}`} target="">
@@ -121,38 +121,6 @@ const Contact = ({
                 </p>
             </CardContent>
         </Card>
-    )
-}
-
-const TextContactLink = ({
-    link,
-    target,
-    children
-}: PropsWithChildren<{ link: string; target: string }>) => {
-    return (
-        <a
-            className="underline-none text-blue-600 hover:text-blue-600 visited:text-purple-600"
-            target={target}
-            href={link}
-        >
-            {children}
-        </a>
-    )
-}
-
-const RoundIconContactLink = ({
-    link,
-    target,
-    children
-}: PropsWithChildren<{ link: string; target: string }>) => {
-    return (
-        <a
-            className="underline text-blue-600 hover:text-blue-600 visited:text-purple-600 rounded-2xl border-solid border-2 border-[color:--foreground] p-1"
-            target={target}
-            href={link}
-        >
-            {children}
-        </a>
     )
 }
 
