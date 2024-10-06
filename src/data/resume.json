@@ -1,210 +1,249 @@
 {
-    "name": "Sahan Ratnayake",
-    "role": "Software Engineer",
-    "contact": {
-        "email": "sahanrat@gmail.com",
-        "phone": "+1(647)-972-7035",
-        "address": "Hamilton, ON",
-        "linkedin": "https://www.linkedin.com/in/sahanratnayake/",
-        "repo": ""
+  "name": "Sahan Ratnayake",
+  "role": "Software Engineer",
+  "contact": {
+    "email": "sahanrat@gmail.com",
+    "phone": "+1(647)-972-7035",
+    "address": "Hamilton, ON",
+    "linkedin": "https://www.linkedin.com/in/sahanratnayake/",
+    "repo": ""
+  },
+  "summary": "Dynamic and results-driven developer with <strong>over 9 years of experience</strong> in creating robust back-end systems using <strong>.NET Core</strong> and <strong>Python</strong>, as well as building full-stack applications with <strong>Next.js</strong> and <strong>React</strong>. Proficient in utilizing testing tools to ensure high-quality deliverables.</br></br>Eager to leverage my expertise and collaborate with a talented team to drive innovation and tackle new challenges.",
+  "experience": [
+    {
+      "company": {
+        "name": "Stampen Media",
+        "location": "Sweden",
+        "description": "A leading Swedish media company <strong>operating over 20 regional newspapers</strong> and numerous digital platforms, <strong>reaching millions of readers</strong> across the country. With a strong focus on digital transformation, it aims to innovate in content delivery and engage audiences in an increasingly competitive media landscape.",
+        "summary": "One of Sweden's largest newspaper companies, managing and operating over 20 titles across different regions reaching millions of readers.",
+        "link": "https://www.gp.se/",
+        "image": "/companies/stampen.webp"
+      },
+      "role": "Tech Lead",
+      "start_date": "June 2022",
+      "end_date": "August 2024",
+      "key_achievements": [
+        "Led platform migration, <strong>increasing daily page views by 300% to 4 million</strong> while maintaining stability and controlling costs.",
+        "Developed site components that visualized news data, significantly <strong>enhancing user engagement</strong> and comprehension."
+      ],
+      "stack": ["Next.js", "AWS AppSync & Lambda", "PostgreSQL"],
+      "show_on_mobile": true
     },
-    "summary": "Dynamic and results-driven developer with <strong>over 9 years of experience</strong> in creating robust back-end systems using <strong>.NET Core</strong> and <strong>Python</strong>, as well as building full-stack applications with <strong>Next.js</strong> and <strong>React</strong>. Proficient in utilizing testing tools to ensure high-quality deliverables.</br></br>Eager to leverage my expertise and collaborate with a talented team to drive innovation and tackle new challenges.",
-    "experience": [
+    {
+      "company": {
+        "name": "AiScout",
+        "location": "United Kingdom",
+        "description": "An innovative technology company that leverages artificial intelligence to optimize talent acquisition and recruitment processes, helping organizations find the best candidates more efficiently.",
+        "summary": "An innovative technology company that leverages artificial intelligence to optimize talent acquisition and recruitment processes, helping organizations find the best candidates more efficiently.",
+        "link": "https://www.ai.io/",
+        "image": "/companies/ai_scout.webp"
+      },
+      "role": "Associate Technical Lead",
+      "start_date": "January 2022",
+      "end_date": "June 2022",
+      "key_achievements": [
+        "Led an initiative to create a wrapper script for pose analysis in Python and intigrate it to the backend"
+      ],
+      "stack": [".NET Core", "Python", "React.js"],
+      "show_on_mobile": true
+    },
+    {
+      "company": {
+        "name": "Dreamsave Insights",
+        "location": "United States",
+        "description": "U.S. fintech company that enriches the lives of Africans by providing a goal-oriented savings platform, enabling users to create personalized plans and automate their savings. Since its founding, it has rapidly gained traction among younger consumers, promoting financial literacy and efficient saving habits through innovative technology.",
+        "summary": "A platform aimed at enriching the lives of Africans by enabling users to save and invest in their communities.",
+        "link": "https://www.dreamstartlabs.com/",
+        "image": "/companies/dreamsave.webp"
+      },
+      "role": "Senior Software Engineer",
+      "start_date": "July 2020",
+      "end_date": "January 2022",
+      "key_achievements": [
+        "Served as backend lead for developing an analytical tool that processed data from hundreds of savings groups, enabling rapid trend visualization and prediction.",
+        "Collaborated with cross-functional teams to drive data-driven decisions, enhancing organizational effectiveness."
+      ],
+      "stack": ["Python Flask", "MongoDB", "React.js", "Apache Cassandra"],
+      "show_on_mobile": true
+    },
+    {
+      "company": {
+        "name": "MotivatePT",
+        "location": "United Kingdom",
+        "description": "A UK-based fitness technology company that connects users with personal trainers through a user-friendly app, offering tailored workout plans and nutrition guidance. With a focus on enhancing user engagement, it leverages advanced digital tools to facilitate remote training and promote healthier lifestyles, making fitness more accessible and personalized.",
+        "summary": "A UK-based fitness technology company that connects users with personal trainers via an app, offering personalized workout plans and accessibility in fitness.",
+        "link": "https://www.motivatept.co.uk/",
+        "image": "/companies/motivatept.webp"
+      },
+      "role": "Senior Software Engineer",
+      "start_date": "December 2019",
+      "end_date": "July 2020",
+      "key_achievements": [
+        "Led back-end development for core booking and scheduling functionalities, implementing rich notification channels to boost user engagement."
+      ],
+      "stack": [".NET Core", "PostgreSQL"],
+      "show_on_mobile": true
+    },
+    {
+      "company": {
+        "name": "Ancon",
+        "location": "Sweden",
+        "description": "A leading restaurant management and food delivery network in Sweden mainly providing a Point of sales (POS) solutions for over 1500 restaurants.",
+        "summary": "A leading restaurant management and food delivery network in Sweden mainly providing a Point of sales (POS) solutions for over 1500 restaurants.",
+        "link": "https://ancon.io/",
+        "image": "/companies/ancon.webp"
+      },
+      "role": "Senior Software Engineer",
+      "start_date": "May 2018",
+      "end_date": "December 2019",
+      "key_achievements": [
+        "Drove G2 platform migration, enhancing back-end scalability and performance to meet increased user demand.",
+        "Developed new API endpoints that improved overall service efficiency."
+      ],
+      "stack": [".NET Core", "PostgreSQL"],
+      "show_on_mobile": true
+    },
+    {
+      "company": {
+        "name": "Volume",
+        "location": "United Kingdom",
+        "description": "A prominent digital marketing agency recognized for its innovative strategies and data-driven approach, working with high-profile clients like Dell, Zebra, Castrol, and Intuit. With its substantial scale and expertise, Volume is pivotal in shaping brands' online presence and driving measurable results in an ever-evolving digital landscape.",
+        "summary": "A prominent digital marketing agency recognized for its innovative strategies and data-driven approach based in the United Kingdom, working with high-profile clients like Dell, Zebra, Castrol, and Intuit.",
+        "link": "https://www.volumeglobal.com/",
+        "image": "/companies/volume.webp"
+      },
+      "role": "Software Engineer",
+      "start_date": "November 2016",
+      "end_date": "May 2018",
+      "key_achievements": [
+        "Developed an e-learning platform for Intuit, optimizing online tools to enhance user training.",
+        "Managed change requests for CMS and client websites, ensuring timely delivery and client satisfaction.",
+        "Represented the company’s AI chatbot initiatives at startup investor forums in Sri Lanka and mentored interns to foster talent development."
+      ],
+      "stack": [".NET Standard", "SQL Server"],
+      "show_on_mobile": false
+    },
+    {
+      "company": {
+        "name": "GoWireless",
+        "location": "United States",
+        "description": "A leading telecommunications provider specializing in advanced mobile solutions and services, catering to a diverse range of customers across the United States. With a robust presence in the industry and partnerships with major carriers, GoWirelessUS plays a crucial role in enhancing connectivity and driving technological innovation for businesses and consumers alike.",
+        "summary": "A leading telecommunications provider in the U.S., delivering advanced mobile solutions and enhancing connectivity for a diverse range of customers through strong partnerships with major carriers.",
+        "link": "https://www.linkedin.com/company/go-wireless-inc-/",
+        "image": "/companies/gowireless.webp"
+      },
+      "role": "Junior Software Engineer",
+      "start_date": "April 2016",
+      "end_date": "November 2016",
+      "key_achievements": [
+        "Developed a device warranty management system, gaining hands-on experience with production-level projects."
+      ],
+      "stack": [".NET Standard", "Angular", "SQL Server"],
+      "show_on_mobile": false
+    },
+    {
+      "company": {
+        "name": "Pragmatic Test Labs",
+        "location": "Sri Lanka",
+        "description": "Provided third-party testing for clients such as PWC Sri Lanka and served as the foundation of my internship period.",
+        "summary": "Provided third-party testing for clients such as PWC Sri Lanka and served as the foundation of my internship period.",
+        "link": "https://pragmatictestlabs.com/",
+        "image": "/companies/pragmatic.webp"
+      },
+      "role": "Intern QA Engineer",
+      "start_date": "October 2014",
+      "end_date": "May 2015",
+      "key_achievements": [
+        "Conducted automation and stress testing, enhancing requirement analysis skills and software development capabilities."
+      ],
+      "stack": ["Selenium", "JMeter"],
+      "show_on_mobile": false
+    }
+  ],
+  "education": [
+    {
+      "school": "Staffordshire University",
+      "location": "United Kingdom",
+      "degree": "Bachelor of Science: Computer Engineering",
+      "start_date": "October 2012",
+      "end_date": "April 2016"
+    }
+  ],
+  "certifications": [],
+  "skills": [
+    {
+      "skill": "C#",
+      "frameworks": [
         {
-            "company": {
-                "name": "Stampen Media",
-                "location": "Sweden",
-                "description": "A leading Swedish media company <strong>operating over 20 regional newspapers</strong> and numerous digital platforms, <strong>reaching millions of readers</strong> across the country. With a strong focus on digital transformation, it aims to innovate in content delivery and engage audiences in an increasingly competitive media landscape.",
-                "summary": "One of Sweden's largest newspaper companies, managing and operating over 20 titles across different regions reaching millions of readers.",
-                "link": "https://www.gp.se/",
-                "image": "/companies/stampen.webp"
-            },
-            "role": "Tech Lead",
-            "start_date": "June 2022",
-            "end_date": "August 2024",
-            "key_achievements": [
-                "Led platform migration, <strong>increasing daily page views by 300% to 4 million</strong> while maintaining stability and controlling costs.",
-                "Developed site components that visualized news data, significantly <strong>enhancing user engagement</strong> and comprehension."
-            ],
-            "stack": ["Next.js", "AWS AppSync & Lambda", "PostgreSQL"],
-            "show_on_mobile": true
+          "name": ".Net Core",
+          "proficiency": 0.9
         },
         {
-            "company": {
-                "name": "AiScout",
-                "location": "United Kingdom",
-                "description": "An innovative technology company that leverages artificial intelligence to optimize talent acquisition and recruitment processes, helping organizations find the best candidates more efficiently.",
-                "summary": "An innovative technology company that leverages artificial intelligence to optimize talent acquisition and recruitment processes, helping organizations find the best candidates more efficiently.",
-                "link": "https://www.ai.io/",
-                "image": "/companies/ai_scout.webp"
-            },
-            "role": "Associate Technical Lead",
-            "start_date": "January 2022",
-            "end_date": "June 2022",
-            "key_achievements": [
-                "Led an initiative to create a wrapper script for pose analysis in Python and intigrate it to the backend"
-            ],
-            "stack": [".NET Core", "Python", "React.js"],
-            "show_on_mobile": true
-        },
-        {
-            "company": {
-                "name": "Dreamsave Insights",
-                "location": "United States",
-                "description": "U.S. fintech company that enriches the lives of Africans by providing a goal-oriented savings platform, enabling users to create personalized plans and automate their savings. Since its founding, it has rapidly gained traction among younger consumers, promoting financial literacy and efficient saving habits through innovative technology.",
-                "summary": "A platform aimed at enriching the lives of Africans by enabling users to save and invest in their communities.",
-                "link": "https://www.dreamstartlabs.com/",
-                "image": "/companies/dreamsave.webp"
-            },
-            "role": "Senior Software Engineer",
-            "start_date": "July 2020",
-            "end_date": "January 2022",
-            "key_achievements": [
-                "Served as backend lead for developing an analytical tool that processed data from hundreds of savings groups, enabling rapid trend visualization and prediction.",
-                "Collaborated with cross-functional teams to drive data-driven decisions, enhancing organizational effectiveness."
-            ],
-            "stack": ["Python Flask", "MongoDB", "React.js", "Apache Cassandra"],
-            "show_on_mobile": true
-        },
-        {
-            "company": {
-                "name": "MotivatePT",
-                "location": "United Kingdom",
-                "description": "A UK-based fitness technology company that connects users with personal trainers through a user-friendly app, offering tailored workout plans and nutrition guidance. With a focus on enhancing user engagement, it leverages advanced digital tools to facilitate remote training and promote healthier lifestyles, making fitness more accessible and personalized.",
-                "summary": "A UK-based fitness technology company that connects users with personal trainers via an app, offering personalized workout plans and accessibility in fitness.",
-                "link": "https://www.motivatept.co.uk/",
-                "image": "/companies/motivatept.webp"
-            },
-            "role": "Senior Software Engineer",
-            "start_date": "December 2019",
-            "end_date": "July 2020",
-            "key_achievements": [
-                "Led back-end development for core booking and scheduling functionalities, implementing rich notification channels to boost user engagement."
-            ],
-            "stack": [".NET Core", "PostgreSQL"],
-            "show_on_mobile": true
-        },
-        {
-            "company": {
-                "name": "Ancon",
-                "location": "Sweden",
-                "description": "A leading restaurant management and food delivery network in Sweden mainly providing a Point of sales (POS) solutions for over 1500 restaurants.",
-                "summary": "A leading restaurant management and food delivery network in Sweden mainly providing a Point of sales (POS) solutions for over 1500 restaurants.",
-                "link": "https://ancon.io/",
-                "image": "/companies/ancon.webp"
-            },
-            "role": "Senior Software Engineer",
-            "start_date": "May 2018",
-            "end_date": "December 2019",
-            "key_achievements": [
-                "Drove G2 platform migration, enhancing back-end scalability and performance to meet increased user demand.",
-                "Developed new API endpoints that improved overall service efficiency."
-            ],
-            "stack": [".NET Core", "PostgreSQL"],
-            "show_on_mobile": true
-        },
-        {
-            "company": {
-                "name": "Volume",
-                "location": "United Kingdom",
-                "description": "A prominent digital marketing agency recognized for its innovative strategies and data-driven approach, working with high-profile clients like Dell, Zebra, Castrol, and Intuit. With its substantial scale and expertise, Volume is pivotal in shaping brands' online presence and driving measurable results in an ever-evolving digital landscape.",
-                "summary": "A prominent digital marketing agency recognized for its innovative strategies and data-driven approach based in the United Kingdom, working with high-profile clients like Dell, Zebra, Castrol, and Intuit.",
-                "link": "https://www.volumeglobal.com/",
-                "image": "/companies/volume.webp"
-            },
-            "role": "Software Engineer",
-            "start_date": "November 2016",
-            "end_date": "May 2018",
-            "key_achievements": [
-                "Developed an e-learning platform for Intuit, optimizing online tools to enhance user training.",
-                "Managed change requests for CMS and client websites, ensuring timely delivery and client satisfaction.",
-                "Represented the company’s AI chatbot initiatives at startup investor forums in Sri Lanka and mentored interns to foster talent development."
-            ],
-            "stack": [".NET Standard", "SQL Server"],
-            "show_on_mobile": false
-        },
-        {
-            "company": {
-                "name": "GoWireless",
-                "location": "United States",
-                "description": "A leading telecommunications provider specializing in advanced mobile solutions and services, catering to a diverse range of customers across the United States. With a robust presence in the industry and partnerships with major carriers, GoWirelessUS plays a crucial role in enhancing connectivity and driving technological innovation for businesses and consumers alike.",
-                "summary": "A leading telecommunications provider in the U.S., delivering advanced mobile solutions and enhancing connectivity for a diverse range of customers through strong partnerships with major carriers.",
-                "link": "https://www.linkedin.com/company/go-wireless-inc-/",
-                "image": "/companies/gowireless.webp"
-            },
-            "role": "Junior Software Engineer",
-            "start_date": "April 2016",
-            "end_date": "November 2016",
-            "key_achievements": [
-                "Developed a device warranty management system, gaining hands-on experience with production-level projects."
-            ],
-            "stack": [".NET Standard", "Angular", "SQL Server"],
-            "show_on_mobile": false
-        },
-        {
-            "company": {
-                "name": "Pragmatic Test Labs",
-                "location": "Sri Lanka",
-                "description": "Provided third-party testing for clients such as PWC Sri Lanka and served as the foundation of my internship period.",
-                "summary": "Provided third-party testing for clients such as PWC Sri Lanka and served as the foundation of my internship period.",
-                "link": "https://pragmatictestlabs.com/",
-                "image": "/companies/pragmatic.webp"
-            },
-            "role": "Intern QA Engineer",
-            "start_date": "October 2014",
-            "end_date": "May 2015",
-            "key_achievements": [
-                "Conducted automation and stress testing, enhancing requirement analysis skills and software development capabilities."
-            ],
-            "stack": ["Selenium", "JMeter"],
-            "show_on_mobile": false
+          "name": ".Net Standard",
+          "proficiency": 0.6
         }
-    ],
-    "education": [
+      ],
+      "type": "Back-end"
+    },
+    {
+      "skill": "Python",
+      "frameworks": [
         {
-            "school": "Staffordshire University",
-            "location": "United Kingdom",
-            "degree": "Bachelor of Science: Computer Engineering",
-            "start_date": "October 2012",
-            "end_date": "April 2016"
+          "name": "Flask",
+          "proficiency": 0.8
+        },
+        {
+          "name": "Django",
+          "proficiency": 0.4
         }
-    ],
-    "certifications": [],
-    "skills": [
+      ],
+      "type": "Back-end"
+    },
+    {
+      "skill": "Typescript",
+      "frameworks": [
         {
-            "skill": ".Net Core",
-            "proficiency": 0.8,
-            "type": "backend"
+          "name": "Next.js",
+          "proficiency": 0.9
         },
         {
-            "skill": "Python",
-            "proficiency": 0.7,
-            "type": "backend"
-        },
-        {
-            "skill": "Next.js",
-            "proficiency": 0.9,
-            "type": "frontend"
-        },
-        {
-            "skill": "React",
-            "proficiency": 0.8,
-            "type": "frontend"
-        },
-        {
-            "skill": "PostgresSQL",
-            "proficiency": 0.7,
-            "type": "database"
-        },
-        {
-            "skill": "MongoDB",
-            "proficiency": 0.4,
-            "type": "database"
-        },
-        {
-            "skill": "AWS",
-            "proficiency": 0.7,
-            "type": "infrastructure"
+          "name": "React",
+          "proficiency": 0.6
         }
-    ]
+      ],
+      "type": "Front-end"
+    },
+    {
+      "skill": "Typescript",
+      "frameworks": [
+        {
+          "name": "Next.js",
+          "proficiency": 0.8
+        },
+        {
+          "name": "React",
+          "proficiency": 0.6
+        }
+      ],
+      "type": "Front-end"
+    },
+    {
+      "skill": "PostgresSQL",
+      "frameworks": [],
+      "proficiency": 0.7,
+      "type": "Database"
+    },
+    {
+      "skill": "MongoDB",
+      "frameworks": [],
+      "proficiency": 0.4,
+      "type": "Database"
+    },
+    {
+      "skill": "AWS",
+      "frameworks": [],
+      "proficiency": 0.7,
+      "type": "Infrastructure"
+    }
+  ]
 }
