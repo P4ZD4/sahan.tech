@@ -20,8 +20,8 @@
         "image": "/companies/stampen.webp"
       },
       "role": "Tech Lead",
-      "start_date": "June 2022",
-      "end_date": "August 2024",
+      "start_date": "Jun 2022",
+      "end_date": "Aug 2024",
       "key_achievements": [
         "Led platform migration, <strong>increasing daily page views by 300% to 4 million</strong> while maintaining stability and controlling costs.",
         "Developed site components that visualized news data, significantly <strong>enhancing user engagement</strong> and comprehension."
@@ -39,12 +39,12 @@
         "image": "/companies/ai_scout.webp"
       },
       "role": "Associate Technical Lead",
-      "start_date": "January 2022",
-      "end_date": "June 2022",
+      "start_date": "Jan 2022",
+      "end_date": "Jun 2022",
       "key_achievements": [
         "Led an initiative to create a wrapper script for pose analysis in Python and intigrate it to the backend"
       ],
-      "stack": [".NET Core", "Python", "React.js"],
+      "stack": [".NET Core", "Python", "React"],
       "show_on_mobile": true
     },
     {
@@ -57,13 +57,13 @@
         "image": "/companies/dreamsave.webp"
       },
       "role": "Senior Software Engineer",
-      "start_date": "July 2020",
-      "end_date": "January 2022",
+      "start_date": "Jul 2020",
+      "end_date": "Jan 2022",
       "key_achievements": [
         "Served as backend lead for developing an analytical tool that processed data from hundreds of savings groups, enabling rapid trend visualization and prediction.",
         "Collaborated with cross-functional teams to drive data-driven decisions, enhancing organizational effectiveness."
       ],
-      "stack": ["Python Flask", "MongoDB", "React.js", "Apache Cassandra"],
+      "stack": ["Python Flask", "MongoDB", "React", "Apache Cassandra"],
       "show_on_mobile": true
     },
     {
@@ -76,8 +76,8 @@
         "image": "/companies/motivatept.webp"
       },
       "role": "Senior Software Engineer",
-      "start_date": "December 2019",
-      "end_date": "July 2020",
+      "start_date": "Dec 2019",
+      "end_date": "Jul 2020",
       "key_achievements": [
         "Led back-end development for core booking and scheduling functionalities, implementing rich notification channels to boost user engagement."
       ],
@@ -95,7 +95,7 @@
       },
       "role": "Senior Software Engineer",
       "start_date": "May 2018",
-      "end_date": "December 2019",
+      "end_date": "Dec 2019",
       "key_achievements": [
         "Drove G2 platform migration, enhancing back-end scalability and performance to meet increased user demand.",
         "Developed new API endpoints that improved overall service efficiency."
@@ -113,7 +113,7 @@
         "image": "/companies/volume.webp"
       },
       "role": "Software Engineer",
-      "start_date": "November 2016",
+      "start_date": "Nov 2016",
       "end_date": "May 2018",
       "key_achievements": [
         "Developed an e-learning platform for Intuit, optimizing online tools to enhance user training.",
@@ -133,8 +133,8 @@
         "image": "/companies/gowireless.webp"
       },
       "role": "Junior Software Engineer",
-      "start_date": "April 2016",
-      "end_date": "November 2016",
+      "start_date": "Apr 2016",
+      "end_date": "Nov 2016",
       "key_achievements": [
         "Developed a device warranty management system, gaining hands-on experience with production-level projects."
       ],
@@ -151,7 +151,7 @@
         "image": "/companies/pragmatic.webp"
       },
       "role": "Intern QA Engineer",
-      "start_date": "October 2014",
+      "start_date": "Oct 2014",
       "end_date": "May 2015",
       "key_achievements": [
         "Conducted automation and stress testing, enhancing requirement analysis skills and software development capabilities."
@@ -165,8 +165,8 @@
       "school": "Staffordshire University",
       "location": "United Kingdom",
       "degree": "Bachelor of Science: Computer Engineering",
-      "start_date": "October 2012",
-      "end_date": "April 2016"
+      "start_date": "Oct 2012",
+      "end_date": "Apr 2016"
     }
   ],
   "certifications": [],
@@ -205,20 +205,6 @@
         {
           "name": "Next.js",
           "proficiency": 0.9
-        },
-        {
-          "name": "React",
-          "proficiency": 0.6
-        }
-      ],
-      "type": "Front-end"
-    },
-    {
-      "skill": "Typescript",
-      "frameworks": [
-        {
-          "name": "Next.js",
-          "proficiency": 0.8
         },
         {
           "name": "React",

@@ -21,6 +21,8 @@ interface SkillProps {
 function Skills({ skills }: { skills: SkillProps[] }) {
   return (
     <Section title='skills'>
+      <h2 className='text-2xl font-semibold mb-4'>Skills</h2>
+
       <div className='flex gap-4 gap-y-8 flex-wrap'>
         {skills.map((skill, index) => {
           return (

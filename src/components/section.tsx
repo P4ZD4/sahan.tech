@@ -12,8 +12,9 @@ function Section({
     const handleScroll = () => {
       const element = elementRef.current
       if (element) {
-        const top = element.offsetTop
-        const bottom = element.offsetTop + element.offsetHeight
+        const top = element.offsetTop - screen.height / 2
+        const bottom =
+          element.offsetTop + element.offsetHeight - screen.height / 2
         const documentScroll = window.scrollY
 
         if (!inView && top <= documentScroll && bottom >= documentScroll) {

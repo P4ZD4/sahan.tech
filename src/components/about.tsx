@@ -141,7 +141,7 @@ const Contact = ({
 const Summary = ({ summary }: { summary: string }) => {
   return (
     <Card>
-      <CardContent className='pt-3 leading-[1.1rem]'>
+      <CardContent className='pt-3 leading-[1.3rem]'>
         <p dangerouslySetInnerHTML={{ __html: summary }}></p>
       </CardContent>
     </Card>

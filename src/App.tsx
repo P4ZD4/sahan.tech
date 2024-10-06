@@ -16,7 +16,7 @@ function App() {
   return (
     <>
       <Toggle
-        className='fixed top-0 right-0 m-4 p-0 h-8 w-8 z-10 bg-[color:--background]'
+        className='fixed top-0 right-0 m-4 p-0 h-8 w-8 z-20 bg-[color:--background]'
         onClick={() => toggleTheme()}
       >
         <SunMoon color='var(--foreground)' />

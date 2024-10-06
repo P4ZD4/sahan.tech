@@ -49,7 +49,7 @@ function Projects({ projects }: { projects: ProjectProps[] }) {
 
   return (
     <Section title='projects' className=''>
-      <h2 className='text-2xl font-semibold'>Most Recent</h2>
+      <h2 className='text-2xl font-semibold'>Most Recent Projects</h2>
       <div className='flex flex-col md:flex-row gap-6 md:gap-2 overflow-x-auto mt-4'>
         {projects.map((project, index) => {
           return (
