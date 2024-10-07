@@ -5,7 +5,7 @@ function Section({
   children,
   className = undefined,
 }: React.PropsWithChildren<{ title: string; className?: string }>) {
-  const elementRef = useRef(null)
+  const elementRef = useRef<HTMLDivElement>(null)
   const [inView, setInView] = useState(false)
 
   useEffect(() => {

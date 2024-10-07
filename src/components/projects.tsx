@@ -43,7 +43,7 @@ function Projects({ projects }: { projects: ProjectProps[] }) {
         setSelectedProject(project)
       }
     } else {
-      window.open(project.company.link, "_blank").focus()
+      window.open(project.company.link, "_blank")?.focus()
     }
   }
 
