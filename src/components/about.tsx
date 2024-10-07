@@ -35,7 +35,7 @@ interface AboutProps {
 
 function About({ name, role, contact, summary, education }: AboutProps) {
   return (
-    <Section title="about-me" className="content-center">
+    <Section title="about-me" className="content-center max-w-[960px] m-auto">
       <div className="flex flex-col md:flex-row gap-8">
         <div className="flex flex-col gap-4 basis-[80%]">
           <div className="flex flex-row max-[500px]:flex-col gap-4">

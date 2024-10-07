@@ -36,7 +36,7 @@ function Projects({ projects }: { projects: ProjectProps[] }) {
   >(undefined)
 
   const toggleProject = (project: ProjectProps) => {
-    if (screen.width >= 768) {
+    if (screen.width >= 768 && screen.width < 2560) {
       if (selectedProject === project) {
         setSelectedProject(undefined)
       } else {
@@ -48,9 +48,12 @@ function Projects({ projects }: { projects: ProjectProps[] }) {
   }
 
   return (
-    <Section title="projects" className="">
+    <Section
+      title="projects"
+      className="max-w-[1280px] xl:max-w-[1580px] m-auto"
+    >
       <h2 className="text-2xl font-semibold">Most Recent Projects</h2>
-      <div className="flex flex-col md:flex-row gap-6 md:gap-2 overflow-x-auto mt-4">
+      <div className="flex flex-col md:flex-row gap-6 md:gap-2 overflow-x-auto mt-4 xl:flex-wrap xl:gap-12">
         {projects.map((project, index) => {
           return (
             <ProjectCard
@@ -83,7 +86,7 @@ const ProjectCard = ({
 }: ProjectProps & { onClick?: () => void; compactView?: boolean }) => {
   return (
     <Card
-      className={`pb-0 ${!show_on_mobile ? "hidden lg:block" : ""} ${compactView ? "shrink-0 basis-[40%] lg-basis-[30%] cursor-pointer" : ""}`}
+      className={`pb-0 xl:p-4 ${!show_on_mobile ? "hidden lg:block" : ""} ${compactView ? "shrink-0 basis-[45%] lg:basis-[30%] xl:basis-[30%] cursor-pointer" : "xl:hidden"}`}
       onClick={onClick}
     >
       <CardHeader className="leading-[0.5rem] items-left">
@@ -114,7 +117,11 @@ const ProjectCard = ({
           className="lg:hidden pb-2 leading-[1.2rem]"
           dangerouslySetInnerHTML={{ __html: company.summary }}
         />
-        <div className="lg:hidden">
+        <p
+          className="hidden 2xl:block pb-2 leading-[1.2rem]"
+          dangerouslySetInnerHTML={{ __html: company.description }}
+        />
+        <div className="lg:hidden xl:block">
           {key_achievements.map((achievement, index) => (
             <div
               key={`achievement-item-${index + 1}`}

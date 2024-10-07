@@ -50,7 +50,11 @@ export default {
           4: 'hsl(var(--chart-4))',
           5: 'hsl(var(--chart-5))'
         }
-      }
+      },
+      screens: {
+        'xl': '2560px',  
+        '2xl': '3840px',
+      },
     }
   },
   // eslint-disable-next-line
