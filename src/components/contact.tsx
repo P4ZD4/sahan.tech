@@ -32,15 +32,15 @@ const ContactUsDialog = ({
             </IconButtonContactLink>
             <IconButtonContactLink link={`mailto:${email}`} target="_blank">
               <Mail />
-              Drop me an email @{email}
+              Drop me an mail
             </IconButtonContactLink>
-            <IconButtonContactLink link={`phone:${phone}`} target="_blank">
+            <IconButtonContactLink link={`tel:${phone}`} target="_blank">
               <Phone />
-              Let’s chat! Call me at {phone}
+              Let’s chat!
             </IconButtonContactLink>
             <IconButtonContactLink link={repo} target="_blank">
               <Github />
-              Check out my projects on GitHub
+              Check out my GitHub
             </IconButtonContactLink>
           </DialogDescription>
         </DialogHeader>

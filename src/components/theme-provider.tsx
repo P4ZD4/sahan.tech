@@ -13,9 +13,7 @@ type ThemeProviderState = {
 
 const initialState: ThemeProviderState = {
   isDarkMode: true,
-  toggleTheme: () => {
-    console.log("HERE")
-  },
+  toggleTheme: () => {},
 }
 
 const ThemeProviderContext = createContext<ThemeProviderState>(initialState)

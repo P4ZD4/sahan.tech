@@ -52,7 +52,6 @@ function Menu() {
 
   useEffect(() => {
     const handleHashChange = () => {
-      console.log(window.location.hash)
       if (pages.includes(window.location.hash.replace("#", ""))) {
         setCurrentPage(window.location.hash.replace("#", ""))
       }

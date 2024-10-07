@@ -52,7 +52,7 @@ function Projects({ projects }: { projects: ProjectProps[] }) {
       title="projects"
       className="max-w-[1280px] xl:max-w-[1580px] m-auto"
     >
-      <h2 className="text-2xl font-semibold">Most Recent Projects</h2>
+      <h2 className="text-2xl font-semibold">Recent Initiatives</h2>
       <div className="flex flex-col md:flex-row gap-6 md:gap-2 overflow-x-auto mt-4 xl:flex-wrap xl:gap-12">
         {projects.map((project, index) => {
           return (
