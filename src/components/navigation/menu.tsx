@@ -1,5 +1,5 @@
-import { ChevronDown } from 'lucide-react'
-import { useEffect, useState } from 'react'
+import { ChevronDown } from "lucide-react"
+import { useEffect, useState } from "react"
 
 import {
   DropdownMenu,
@@ -7,10 +7,10 @@ import {
   DropdownMenuRadioGroup,
   DropdownMenuRadioItem,
   DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu'
+} from "@/components/ui/dropdown-menu"
 
 function Menu() {
-  const pages = ['about-me', 'projects', 'skills']
+  const pages = ["about-me", "projects", "skills"]
   const [currentPage, setCurrentPage] = useState(pages[0])
 
   const scroll = (page: string) => {
@@ -18,10 +18,10 @@ function Menu() {
     if (scrollOffset !== undefined) {
       window.scrollTo({
         top: scrollOffset + 1,
-        behavior: 'smooth',
+        behavior: "smooth",
       })
       setCurrentPage(page)
-      history.replaceState({}, '', `#${page}`)
+      history.replaceState({}, "", `#${page}`)
     }
   }
   const scrollToPrev = () => {
@@ -38,33 +38,33 @@ function Menu() {
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (screen.width >= 1024) {
-        if (event.key === 'ArrowUp') {
+        if (event.key === "ArrowUp") {
           scrollToPrev()
-        } else if (event.key === 'ArrowDown') {
+        } else if (event.key === "ArrowDown") {
           scrollToNext()
         }
         event.preventDefault()
       }
     }
-    window.addEventListener('keydown', handleKeyDown)
-    return () => window.removeEventListener('keydown', handleKeyDown)
+    window.addEventListener("keydown", handleKeyDown)
+    return () => window.removeEventListener("keydown", handleKeyDown)
   }, [currentPage])
 
   useEffect(() => {
     const handleHashChange = () => {
       console.log(window.location.hash)
-      if (pages.includes(window.location.hash.replace('#', ''))) {
-        setCurrentPage(window.location.hash.replace('#', ''))
+      if (pages.includes(window.location.hash.replace("#", ""))) {
+        setCurrentPage(window.location.hash.replace("#", ""))
       }
     }
-    window.addEventListener('hashchange', handleHashChange)
-    return () => window.removeEventListener('hashchange', handleHashChange)
+    window.addEventListener("hashchange", handleHashChange)
+    return () => window.removeEventListener("hashchange", handleHashChange)
   }, [currentPage])
 
   return (
     <div>
-      <div className='hidden lg:block fixed bottom-0 left-0 w-60 h-screen border-r-8 border-[color:--foreground] bg-[color:--background]'>
-        <div className='absolute bottom-0 w-full mb-8 px-8 text-justify'>
+      <div className="hidden lg:block fixed bottom-0 left-0 w-60 h-screen border-r-8 border-foreground bg-background">
+        <div className="absolute bottom-0 w-full mb-8 px-8 text-justify">
           {pages.map((page, index) => {
             return (
               <MenuItem
@@ -76,19 +76,19 @@ function Menu() {
             )
           })}
         </div>
-        <div className='font-mono absolute -rotate-90 h-[5rem] w-[19rem] left-[5rem] top-[calc(50%-6rem)] bg-[color:--background] text-[3.5rem] text-[color:--foreground]'>
-          {currentPage.replace('-', ' ').toUpperCase()}
+        <div className="absolute -rotate-90 h-[5rem] w-[19rem] left-[5rem] top-[calc(50%-6rem)] bg-background text-[3.5rem] text-foreground">
+          {currentPage.replace("-", " ").toUpperCase()}
         </div>
       </div>
-      <div className='block lg:hidden fixed top:0 w-full bg-[color:--foreground] z-10'>
-        <div className='font-mono text-[2.5rem] text-[color:--background] text-left pl-10'>
-          <div className='flex gap-2 items-center'>
-            {currentPage.replace('-', ' ').toUpperCase()}
+      <div className="block lg:hidden fixed top:0 w-full bg-foreground z-10">
+        <div className="text-[2.5rem] text-background text-left pl-10">
+          <div className="flex gap-2 items-center">
+            {currentPage.replace("-", " ").toUpperCase()}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <ChevronDown size={32} />
               </DropdownMenuTrigger>
-              <DropdownMenuContent className='w-56 bg-[color:--foreground]'>
+              <DropdownMenuContent className="w-56 bg-foreground">
                 <DropdownMenuRadioGroup
                   value={currentPage}
                   onValueChange={scroll}
@@ -98,9 +98,9 @@ function Menu() {
                       <DropdownMenuRadioItem
                         key={`menu-dropdown-index-${index + 1}`}
                         value={page}
-                        className='text-lg text-[color:--background]'
+                        className="text-lg text-background"
                       >
-                        {page.replace('-', ' ').toUpperCase()}
+                        {page.replace("-", " ").toUpperCase()}
                       </DropdownMenuRadioItem>
                     )
                   })}
@@ -124,13 +124,13 @@ const MenuItem = ({
   onClick: () => void
 }) => {
   const styling =
-    'font-mono py-4 decoration-[color:--foreground] text-[color:--foreground] text-[1.1rem]'
+    "font-mono py-4 decoration-[color:--foreground] text-foreground text-[1.1rem]"
   return (
     <div
-      className={`${styling} ${active ? 'underline' : ''}`}
+      className={`${styling} ${active ? "underline" : ""}`}
       onClick={onClick}
     >
-      {heading.replace('-', ' ').toUpperCase()}
+      {heading.replace("-", " ").toUpperCase()}
     </div>
   )
 }

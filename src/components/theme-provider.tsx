@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from 'react'
+import { createContext, useContext, useEffect, useState } from "react"
 
 type ThemeProviderProps = {
   children: React.ReactNode
@@ -14,7 +14,7 @@ type ThemeProviderState = {
 const initialState: ThemeProviderState = {
   isDarkMode: true,
   toggleTheme: () => {
-    console.log('HERE')
+    console.log("HERE")
   },
 }
 
@@ -23,29 +23,29 @@ const ThemeProviderContext = createContext<ThemeProviderState>(initialState)
 export function ThemeProvider({
   children,
   isDefaultDarkMode = false,
-  storageKey = 'vite-ui-theme',
+  storageKey = "vite-ui-theme",
   ...props
 }: ThemeProviderProps) {
   const [isDarkMode, setIsDarkMode] = useState<boolean | undefined>(
-    () => localStorage.getItem(storageKey) === 'true' || isDefaultDarkMode
+    () => localStorage.getItem(storageKey) === "true" || isDefaultDarkMode,
   )
 
   useEffect(() => {
     const root = window.document.documentElement
 
-    root.classList.remove('light', 'dark')
+    root.classList.remove("light", "dark")
 
     if (isDarkMode === undefined) {
-      const systemTheme = window.matchMedia('(prefers-color-scheme: dark)')
+      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
         .matches
-        ? 'dark'
-        : 'light'
+        ? "dark"
+        : "light"
 
       root.classList.add(systemTheme)
       return
     }
 
-    root.classList.add(isDarkMode ? 'dark' : 'light')
+    root.classList.add(isDarkMode ? "dark" : "light")
   }, [isDarkMode])
 
   const value = {
@@ -67,7 +67,7 @@ export const useTheme = () => {
   const context = useContext(ThemeProviderContext)
 
   if (context === undefined)
-    throw new Error('useTheme must be used within a ThemeProvider')
+    throw new Error("useTheme must be used within a ThemeProvider")
 
   return context
 }

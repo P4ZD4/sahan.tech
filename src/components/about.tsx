@@ -1,14 +1,15 @@
-import Section from '@/components/section'
-import { Github, Linkedin, Mail, MapPinHouse, Phone } from 'lucide-react'
-import ProfilePicture from '@/data/profile-picture.webp'
+import Section from "@/components/section"
+import { Mail, MapPinHouse } from "lucide-react"
 import {
   Card,
   CardContent,
   CardDescription,
+  CardFooter,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card'
-import { RoundIconContactLink, TextContactLink } from '@/components/contact'
+} from "@/components/ui/card"
+import { ContactUsDialog, TextContactLink } from "@/components/contact"
+import { Button } from "@/components/ui/button"
 
 interface ContactProps {
   email: string
@@ -34,18 +35,18 @@ interface AboutProps {
 
 function About({ name, role, contact, summary, education }: AboutProps) {
   return (
-    <Section title='about-me' className='content-center'>
-      <div className='flex flex-col md:flex-row gap-8'>
-        <div className='flex flex-col gap-4 basis-[80%]'>
-          <div className='flex flex-row max-[500px]:flex-col gap-4'>
-            <div className='basis-[60%]'>
+    <Section title="about-me" className="content-center">
+      <div className="flex flex-col md:flex-row gap-8">
+        <div className="flex flex-col gap-4 basis-[80%]">
+          <div className="flex flex-row max-[500px]:flex-col gap-4">
+            <div className="basis-[60%]">
               <img
-                src={ProfilePicture}
-                alt='Profile Picture'
-                className='max-w-100 max-[500px]:max-w-[16rem] border bg-card text-card-foreground shadow'
+                src="/profile.webp"
+                alt="Profile Picture"
+                className="max-w-100 max-[500px]:max-w-[16rem]  bg-[#2C3E50] border text-card-foreground shadow"
               />
             </div>
-            <div className='content-end'>
+            <div className="content-end">
               <Contact name={name} role={role} {...contact} />
             </div>
           </div>
@@ -59,8 +60,8 @@ function About({ name, role, contact, summary, education }: AboutProps) {
 
 const Education = ({ education }: { education: EducationProps[] }) => {
   return (
-    <div className='content-end'>
-      <h3 className='font-semibold text-xl pb-2'>Education</h3>
+    <div className="content-end">
+      <h3 className="font-semibold text-xl pb-2">Education</h3>
       {education.map((item, index) => {
         return <EducationItem key={`education-item-${index + 1}`} {...item} />
       })}
@@ -77,7 +78,7 @@ const EducationItem = ({
 }: EducationProps) => {
   return (
     <Card>
-      <CardHeader className='leading-3'>
+      <CardHeader className="leading-3">
         <CardTitle>{school}</CardTitle>
         <CardDescription>{location}</CardDescription>
       </CardHeader>
@@ -101,39 +102,35 @@ const Contact = ({
   repo,
 }: { name: string; role: string } & ContactProps) => {
   return (
-    <Card className='pb-0'>
-      <CardHeader className='gap-1'>
-        <CardTitle className='text-2xl leading-6'>{name}</CardTitle>
-        <CardDescription className='text-base leading-4'>
+    <Card className="pb-0">
+      <CardHeader className="gap-1">
+        <CardTitle className="text-2xl leading-6">{name}</CardTitle>
+        <CardDescription className="text-base leading-4">
           {role}
         </CardDescription>
       </CardHeader>
-      <CardContent className='leading-6 font-center pb-0'>
-        <p className='flex items-center'>
+      <CardContent className="leading-6 font-center pb-2">
+        <p className="flex items-center">
           <Mail size={16} />
-          <TextContactLink link={`mailto:${email}`} target=''>
+          <TextContactLink link={`mailto:${email}`} target="">
             &nbsp;{email}
           </TextContactLink>
         </p>
-        <p className='flex items-center'>
-          <Phone size={16} />
-          <TextContactLink link={`tel:${phone}`} target=''>
-            &nbsp;{phone}
-          </TextContactLink>
-        </p>
-        <p className='flex items-center'>
+        <p className="flex items-center">
           <MapPinHouse size={16} />
           &nbsp;{address}
         </p>
-        <p className='flex items-center py-2 gap-2'>
-          <RoundIconContactLink link={linkedin} target='_blank'>
-            <Linkedin size={16} />
-          </RoundIconContactLink>
-          <RoundIconContactLink link={repo} target='_blank'>
-            <Github size={16} />
-          </RoundIconContactLink>
-        </p>
       </CardContent>
+      <CardFooter className="flex flex-col gap-2 items-start">
+        <a
+          href="/Sahan Ratnayake Resume.pdf"
+          download="Sahan Ratnayake Resume.pdf"
+          target="_blank"
+        >
+          <Button>Download Résumé</Button>
+        </a>
+        <ContactUsDialog {...{ linkedin, email, phone, repo }} />
+      </CardFooter>
     </Card>
   )
 }
@@ -141,7 +138,7 @@ const Contact = ({
 const Summary = ({ summary }: { summary: string }) => {
   return (
     <Card>
-      <CardContent className='pt-3 leading-[1.3rem]'>
+      <CardContent className="pt-3 leading-[1.3rem]">
         <p dangerouslySetInnerHTML={{ __html: summary }}></p>
       </CardContent>
     </Card>
