@@ -43,7 +43,7 @@ function About({ name, role, contact, summary, education }: AboutProps) {
               <img
                 src="/profile.webp"
                 alt="Profile Picture"
-                className="max-w-100 max-[500px]:max-w-[16rem]  bg-[#2C3E50] border text-card-foreground shadow"
+                className="min-[500px]:max-w-100 bg-[#2C3E50] border text-card-foreground shadow"
               />
             </div>
             <div className="content-end">

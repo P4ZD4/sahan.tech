@@ -42,7 +42,7 @@
       "start_date": "Jan 2022",
       "end_date": "Jun 2022",
       "key_achievements": [
-        "Led an initiative to create a wrapper script for pose analysis in Python and intigrate it to the backend"
+        "Led an initiative to create a wrapper script for pose analysis in Python and integrate it to the back-end."
       ],
       "stack": [".NET Core", "Python", "React"],
       "show_on_mobile": true
@@ -60,7 +60,7 @@
       "start_date": "Jul 2020",
       "end_date": "Jan 2022",
       "key_achievements": [
-        "Served as backend lead for developing an analytical tool that processed data from hundreds of savings groups, enabling rapid trend visualization and prediction.",
+        "Served as back-end lead for developing an analytical tool that processed data from hundreds of savings groups, enabling rapid trend visualization and prediction.",
         "Collaborated with cross-functional teams to drive data-driven decisions, enhancing organizational effectiveness."
       ],
       "stack": ["Python Flask", "MongoDB", "React", "Apache Cassandra"],
@@ -88,8 +88,8 @@
       "company": {
         "name": "Ancon",
         "location": "Sweden",
-        "description": "A leading restaurant management and food delivery network in Sweden mainly providing a Point of sales (POS) solutions for over 1500 restaurants.",
-        "summary": "A leading restaurant management and food delivery network in Sweden mainly providing a Point of sales (POS) solutions for over 1500 restaurants.",
+        "description": "A leading restaurant management and food delivery network in Sweden mainly providing Point of sales (POS) solutions for over 1500 restaurants.",
+        "summary": "A leading restaurant management and food delivery network in Sweden mainly providing Point of sales (POS) solutions for over 1500 restaurants.",
         "link": "https://ancon.io/",
         "image": "/companies/ancon.webp"
       },
@@ -172,6 +172,20 @@
   "certifications": [],
   "skills": [
     {
+      "skill": "Typescript",
+      "frameworks": [
+        {
+          "name": "Next.js",
+          "proficiency": 0.9
+        },
+        {
+          "name": "React",
+          "proficiency": 0.8
+        }
+      ],
+      "type": "Front-end"
+    },
+    {
       "skill": "C#",
       "frameworks": [
         {
@@ -198,20 +212,6 @@
         }
       ],
       "type": "Back-end"
-    },
-    {
-      "skill": "Typescript",
-      "frameworks": [
-        {
-          "name": "Next.js",
-          "proficiency": 0.9
-        },
-        {
-          "name": "React",
-          "proficiency": 0.6
-        }
-      ],
-      "type": "Front-end"
     },
     {
       "skill": "PostgresSQL",
