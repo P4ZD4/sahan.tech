@@ -12,96 +12,112 @@
   "experience": [
     {
       "company": {
-        "name": "Stampen Media",
-        "location": "Sweden",
-        "description": "A leading Swedish media company <strong>operating over 20 regional newspapers</strong> and numerous digital platforms, <strong>reaching millions of readers</strong> across the country. With a strong focus on digital transformation, it aims to innovate in content delivery and engage audiences in an increasingly competitive media landscape.",
-        "summary": "One of Sweden's largest newspaper companies, managing and operating over 20 titles across different regions reaching millions of readers.",
-        "link": "https://www.gp.se/",
-        "image": "/companies/stampen.webp"
+        "name": "Calcey Technologies",
+        "location": "Sri Lanka",
+        "description": "Calcey is a Gartner-recognized software development and IT consulting company based in Sri Lanka, serving global clients. Specializing in building custom web and mobile solutions for startups and enterprises, with a focus on delivering high-quality, scalable products using agile methodologies.",
+        "summary": "Calcey is a Gartner-recognized software development and IT consulting company based in Sri Lanka, serving global clients. Specializing in building custom web and mobile solutions for startups and enterprises, with a focus on delivering high-quality, scalable products using agile methodologies.",
+        "link": "https://calcey.com/",
+        "image": "/companies/calcey.webp"
       },
-      "role": "Tech Lead",
-      "start_date": "Jun 2022",
-      "end_date": "Aug 2024",
-      "key_achievements": [
-        "Led platform migration, <strong>increasing daily page views by 300% to 4 million</strong> while maintaining stability and controlling costs.",
-        "Developed site components that visualized news data, significantly <strong>enhancing user engagement</strong> and comprehension."
-      ],
-      "stack": ["Next.js", "AWS AppSync & Lambda", "PostgreSQL"],
-      "show_on_mobile": true
-    },
-    {
-      "company": {
-        "name": "AiScout",
-        "location": "United Kingdom",
-        "description": "An innovative technology company that leverages artificial intelligence to optimize talent acquisition and recruitment processes, helping organizations find the best candidates more efficiently.",
-        "summary": "An innovative technology company that leverages artificial intelligence to optimize talent acquisition and recruitment processes, helping organizations find the best candidates more efficiently.",
-        "link": "https://www.ai.io/",
-        "image": "/companies/ai_scout.webp"
-      },
-      "role": "Associate Technical Lead",
-      "start_date": "Jan 2022",
-      "end_date": "Jun 2022",
-      "key_achievements": [
-        "Led an initiative to create a wrapper script for pose analysis in Python and integrate it to the back-end."
-      ],
-      "stack": [".NET Core", "Python", "React"],
-      "show_on_mobile": true
-    },
-    {
-      "company": {
-        "name": "Dreamsave Insights",
-        "location": "United States",
-        "description": "U.S. fintech company that enriches the lives of Africans by providing a goal-oriented savings platform, enabling users to create personalized plans and automate their savings. Since its founding, it has rapidly gained traction among younger consumers, promoting financial literacy and efficient saving habits through innovative technology.",
-        "summary": "A platform aimed at enriching the lives of Africans by enabling users to save and invest in their communities.",
-        "link": "https://www.dreamstartlabs.com/",
-        "image": "/companies/dreamsave.webp"
-      },
-      "role": "Senior Software Engineer",
-      "start_date": "Jul 2020",
-      "end_date": "Jan 2022",
-      "key_achievements": [
-        "Served as back-end lead for developing an analytical tool that processed data from hundreds of savings groups, enabling rapid trend visualization and prediction.",
-        "Collaborated with cross-functional teams to drive data-driven decisions, enhancing organizational effectiveness."
-      ],
-      "stack": ["Python Flask", "MongoDB", "React", "Apache Cassandra"],
-      "show_on_mobile": true
-    },
-    {
-      "company": {
-        "name": "MotivatePT",
-        "location": "United Kingdom",
-        "description": "A UK-based fitness technology company that connects users with personal trainers through a user-friendly app, offering tailored workout plans and nutrition guidance. With a focus on enhancing user engagement, it leverages advanced digital tools to facilitate remote training and promote healthier lifestyles, making fitness more accessible and personalized.",
-        "summary": "A UK-based fitness technology company that connects users with personal trainers via an app, offering personalized workout plans and accessibility in fitness.",
-        "link": "https://www.motivatept.co.uk/",
-        "image": "/companies/motivatept.webp"
-      },
-      "role": "Senior Software Engineer",
-      "start_date": "Dec 2019",
-      "end_date": "Jul 2020",
-      "key_achievements": [
-        "Led back-end development for core booking and scheduling functionalities, implementing rich notification channels to boost user engagement."
-      ],
-      "stack": [".NET Core", "PostgreSQL"],
-      "show_on_mobile": true
-    },
-    {
-      "company": {
-        "name": "Ancon",
-        "location": "Sweden",
-        "description": "A leading restaurant management and food delivery network in Sweden mainly providing Point of sales (POS) solutions for over 1500 restaurants.",
-        "summary": "A leading restaurant management and food delivery network in Sweden mainly providing Point of sales (POS) solutions for over 1500 restaurants.",
-        "link": "https://ancon.io/",
-        "image": "/companies/ancon.webp"
-      },
-      "role": "Senior Software Engineer",
-      "start_date": "May 2018",
-      "end_date": "Dec 2019",
-      "key_achievements": [
-        "Drove G2 platform migration, enhancing back-end scalability and performance to meet increased user demand.",
-        "Developed new API endpoints that improved overall service efficiency."
-      ],
-      "stack": [".NET Core", "PostgreSQL"],
-      "show_on_mobile": true
+      "projects": [
+        {
+          "company": {
+            "name": "Stampen Media",
+            "location": "Sweden",
+            "description": "One of Sweden's largest newspaper companies, managing and operating over a dozen titles across different regions.",
+            "link": "https://www.gp.se/",
+            "image": "/companies/stampen.webp"
+          },
+          "role": "Tech Lead",
+          "start_date": "Jun 2022",
+          "end_date": "Aug 2024",
+          "key_achievements": [
+            "<strong>Led a major platform migration</strong>, boosting daily page views by <strong>300% to over 4 million</strong>, while maintaining high availability and limiting cost increases to <strong>under 50%</strong>.",
+            "<strong>Managed and mentored a remote, cross-functional team of 7</strong> in the customer experience vertical, leading to improved team productivity and project efficiency.",
+            "<strong>Developed interactive site components</strong> for data visualization, significantly enhancing user engagement and comprehension metrics."
+          ],
+          "stack": ["Next.js", "AWS AppSync", "AWS Lambda", "PostgreSQL"],
+          "show_on_mobile": true
+        },
+        {
+          "company": {
+            "name": "AiScout",
+            "location": "United Kingdom",
+            "description": "An innovative technology company leveraging AI to optimize football talent acquisition and recruitment processes for organizations, including premier football clubs like Chelsea and Burnley.",
+            "link": "https://www.ai.io/",
+            "image": "/companies/ai_scout.webp"
+          },
+          "role": "Associate Technical Lead",
+          "start_date": "Jan 2022",
+          "end_date": "Jun 2022",
+          "key_achievements": [
+            "<strong>Led an initiative to decouple analysis functionality</strong>, resulting in improved system operations and enhanced code maintainability.",
+            "<strong>Rapidly integrated into the team</strong>, quickly mastering a complex domain and contributing to the development of key system features."
+          ],
+          "stack": [".NET Core", "Python", "React"],
+          "show_on_mobile": true
+        },
+        {
+          "company": {
+            "name": "Dreamsave Insights",
+            "location": "United States",
+            "description": "A U.S. fintech company enriching Africans' lives with a goal-oriented savings platform for personalized, automated savings—promoting financial literacy and efficient saving habits among younger consumers through innovative technology.",
+            "link": "https://www.dreamstartlabs.com/",
+            "image": "/companies/dreamsave.webp"
+          },
+          "role": "Senior Software Engineer",
+          "start_date": "Jul 2020",
+          "end_date": "Jan 2022",
+          "key_achievements": [
+            "<strong>Spearheaded back-end development</strong> of an analytical tool, processing multi-year data from over <strong>1,500 savings groups</strong>, enabling rapid trend visualization and accurate financial predictions.",
+            "<strong>Optimized system performance</strong> by employing advanced data structures and pre-processing techniques, reducing request processing times to <strong>sub 1s levels</strong>.",
+            "<strong>Collaborated with cross-functional teams</strong> to implement data-driven strategies, enhancing organizational effectiveness and increasing <strong>user engagement by 25%</strong>."
+          ],
+          "stack": [
+            "Flask (Python)",
+            "React.js",
+            "MongoDB",
+            "Apache Cassandra"
+          ],
+          "show_on_mobile": true
+        },
+        {
+          "company": {
+            "name": "MotivatePT",
+            "location": "United States",
+            "description": "A US-based fitness technology company making fitness more accessible and personalized by connecting users with personal trainers through a user-friendly app offering tailored workout plans and nutrition guidance.",
+            "link": "https://www.motivatept.co.uk/",
+            "image": "/companies/motivatept.webp"
+          },
+          "role": "Senior Software Engineer",
+          "start_date": "Dec 2019",
+          "end_date": "Jul 2020",
+          "key_achievements": [
+            "<strong>Led a back-end team of four</strong> to develop core booking and scheduling functionalities, implementing rich notification channels that boosted user engagement.",
+            "<strong>Engineered the infrastructure for a new project</strong>, utilizing best practices to create a cloud-agnostic, low cost and highly scalable system."
+          ],
+          "stack": [".NET Core", "PostgreSQL"],
+          "show_on_mobile": true
+        },
+        {
+          "company": {
+            "name": "Ancon",
+            "location": "Sweden",
+            "description": "A leading restaurant management and food delivery network in Sweden, providing Point of Sale (POS) solutions to over 1,500 restaurants.",
+            "link": "https://ancon.io/",
+            "image": "/companies/ancon.webp"
+          },
+          "role": "Senior Software Engineer",
+          "start_date": "May 2018",
+          "end_date": "Dec 2019",
+          "key_achievements": [
+            "<strong>Drove and mentored a remote team of five</strong> to drive the back-end development of the G2 <strong>platform migration</strong>, resulting in improved system performance and scalability.",
+            "<strong>Enhanced back-end scalability</strong> and built new functionalities to serve over <strong>100,000 users</strong>, developing a multi-tenant system capable of supporting <strong>over 1,000 client</strong> restaurants."
+          ],
+          "stack": [".NET Core", "React.js", "PostgreSQL"],
+          "show_on_mobile": true
+        }
+      ]
     },
     {
       "company": {
@@ -125,12 +141,12 @@
     },
     {
       "company": {
-        "name": "GoWireless",
-        "location": "United States",
-        "description": "A leading telecommunications provider specializing in advanced mobile solutions and services, catering to a diverse range of customers across the United States. With a robust presence in the industry and partnerships with major carriers, GoWirelessUS plays a crucial role in enhancing connectivity and driving technological innovation for businesses and consumers alike.",
-        "summary": "A leading telecommunications provider in the U.S., delivering advanced mobile solutions and enhancing connectivity for a diverse range of customers through strong partnerships with major carriers.",
-        "link": "https://www.linkedin.com/company/go-wireless-inc-/",
-        "image": "/companies/gowireless.webp"
+        "name": "Virtusa",
+        "location": "Sri Lanka",
+        "description": "A global IT services company that provides digital transformation, technology, and consulting solutions, helping businesses optimize their operations and drive innovation across various industries through cutting-edge technologies.",
+        "summary": "A global IT services company that provides digital transformation, technology, and consulting solutions, helping businesses optimize their operations and drive innovation across various industries through cutting-edge technologies.",
+        "link": "https://www.virtusa.com/",
+        "image": "/companies/calcey.webp"
       },
       "role": "Junior Software Engineer",
       "start_date": "Apr 2016",

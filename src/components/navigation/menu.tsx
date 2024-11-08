@@ -9,6 +9,8 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 
+import { toCamelCase } from "@/lib/utils"
+
 function Menu() {
   const pages = ["about-me", "projects", "skills"]
   const [currentPage, setCurrentPage] = useState(pages[0])
@@ -76,13 +78,13 @@ function Menu() {
           })}
         </div>
         <div className="absolute -rotate-90 h-[5rem] w-[19rem] left-[5rem] top-[calc(50%-6rem)] bg-background text-[3.5rem] text-foreground">
-          {currentPage.replace("-", " ").toUpperCase()}
+          {toCamelCase(currentPage.replace("-", " "))}
         </div>
       </div>
       <div className="block lg:hidden fixed top:0 w-full bg-foreground z-10">
         <div className="text-[2.5rem] text-background text-left pl-10">
           <div className="flex gap-2 items-center">
-            {currentPage.replace("-", " ").toUpperCase()}
+            {toCamelCase(currentPage.replace("-", " "))}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <ChevronDown size={32} />
@@ -99,7 +101,7 @@ function Menu() {
                         value={page}
                         className="text-lg text-background"
                       >
-                        {page.replace("-", " ").toUpperCase()}
+                        {toCamelCase(page.replace("-", " "))}
                       </DropdownMenuRadioItem>
                     )
                   })}
@@ -129,7 +131,7 @@ const MenuItem = ({
       className={`${styling} ${active ? "underline" : ""}`}
       onClick={onClick}
     >
-      {heading.replace("-", " ").toUpperCase()}
+      {toCamelCase(heading.replace("-", " "))}
     </div>
   )
 }

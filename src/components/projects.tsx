@@ -15,7 +15,6 @@ interface CompanyProps {
   name: string
   location: string
   description: string
-  summary: string
   link: string
   image: string
 }
@@ -52,7 +51,7 @@ function Projects({ projects }: { projects: ProjectProps[] }) {
       title="projects"
       className="max-w-[1280px] xl:max-w-[1580px] m-auto"
     >
-      <h2 className="text-2xl font-semibold">Recent Initiatives</h2>
+      <h2 className="text-2xl font-semibold">Recent Projects</h2>
       <div className="flex flex-col md:flex-row gap-6 md:gap-2 overflow-x-auto mt-4 xl:flex-wrap xl:gap-12">
         {projects.map((project, index) => {
           return (
@@ -115,11 +114,15 @@ const ProjectCard = ({
         </p>
         <p
           className="lg:hidden pb-2 leading-[1.2rem]"
-          dangerouslySetInnerHTML={{ __html: company.summary }}
+          dangerouslySetInnerHTML={{
+            __html: `<strong>Client Overview: </strong>${company.description}`,
+          }}
         />
         <p
           className="hidden 2xl:block pb-2 leading-[1.2rem]"
-          dangerouslySetInnerHTML={{ __html: company.description }}
+          dangerouslySetInnerHTML={{
+            __html: `<strong>Client Overview: </strong>${company.description}`,
+          }}
         />
         <div className="lg:hidden xl:block">
           {key_achievements.map((achievement, index) => (
@@ -142,9 +145,9 @@ const ProjectCard = ({
         {!compactView && (
           <div className="gap-3 hidden lg:flex flex-col">
             <div
-              className=" leading-[1.2rem]"
+              className=" leading-[1.1rem]"
               dangerouslySetInnerHTML={{
-                __html: company.description,
+                __html: `<strong>Client Overview: </strong>${company.description}`,
               }}
             />
             <div>
@@ -156,7 +159,7 @@ const ProjectCard = ({
                   <span className="flex h-2 w-2 translate-y-1 rounded-full bg-foreground" />
                   <div className="space-y-1">
                     <p
-                      className="text-sm font-medium leading-[1.2rem]"
+                      className="text-sm font-medium leading-[1.1rem]"
                       dangerouslySetInnerHTML={{
                         __html: achievement,
                       }}
@@ -180,3 +183,4 @@ const ProjectCard = ({
 }
 
 export default Projects
+export type { CompanyProps, ProjectProps }

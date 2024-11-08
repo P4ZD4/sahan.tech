@@ -123,8 +123,8 @@ const Contact = ({
       </CardContent>
       <CardFooter className="flex flex-col gap-2 items-start">
         <a
-          href="/Sahan Ratnayake Resume.pdf"
-          download="Sahan Ratnayake Resume.pdf"
+          href="/Sahan - Resume.pdf"
+          download="Sahan - Resume.pdf"
           target="_blank"
         >
           <Button>Download Résumé</Button>

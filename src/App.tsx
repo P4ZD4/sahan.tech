@@ -4,14 +4,27 @@ import { Toggle } from "@/components/ui/toggle"
 import { SunMoon } from "lucide-react"
 import Menu from "@/components/navigation/menu"
 import About from "@/components/about"
-import Projects from "@/components/projects"
+import Projects, { CompanyProps, ProjectProps } from "@/components/projects"
 import Skills from "@/components/skills"
 
 import Resume from "@/data/resume.json"
 
+type Experience =
+  | {
+      company: CompanyProps
+      projects: ProjectProps[]
+    }
+  | ProjectProps
+
 function App() {
   const { toggleTheme } = useTheme()
   const resume = Resume
+
+  const getProjects = (experiences: Experience[]) => {
+    return experiences.reduce((prev, experience) => {
+      return [...prev, ...("projects" in experience ? experience.projects : [])]
+    }, [] as ProjectProps[])
+  }
 
   return (
     <>
@@ -25,7 +38,7 @@ function App() {
       <Menu />
       <div className="lg:ml-[15rem] px-10">
         <About {...resume} />
-        <Projects projects={resume.experience} />
+        <Projects projects={getProjects(resume.experience)} />
         <Skills skills={resume.skills} />
       </div>
     </>
