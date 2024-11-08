@@ -65,7 +65,7 @@ function Projects({ projects }: { projects: ProjectProps[] }) {
       </div>
       <div>
         {selectedProject && (
-          <ProjectCard {...selectedProject} compactView={false} />
+          <ProjectCard {...selectedProject} compactView={false}  className="hidden lg:block"/>
         )}
       </div>
     </Section>
@@ -82,10 +82,11 @@ const ProjectCard = ({
   show_on_mobile,
   onClick = undefined,
   compactView = true,
-}: ProjectProps & { onClick?: () => void; compactView?: boolean }) => {
+  className = "",
+}: ProjectProps & { onClick?: () => void; compactView?: boolean, className?: string }) => {
   return (
     <Card
-      className={`pb-0 xl:p-4 ${!show_on_mobile ? "hidden lg:block" : ""} ${compactView ? "shrink-0 basis-[45%] lg:basis-[30%] xl:basis-[30%] cursor-pointer" : "xl:hidden"}`}
+      className={`pb-0 xl:p-4 ${className} ${!show_on_mobile ? "hidden lg:block" : ""} ${compactView ? "shrink-0 basis-[45%] lg:basis-[30%] xl:basis-[30%] cursor-pointer" : "xl:hidden"}`}
       onClick={onClick}
     >
       <CardHeader className="leading-[0.5rem] items-left">
