@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react"
+import { cn } from "@/lib/utils"
 
 function Section({
   title,
@@ -30,7 +31,10 @@ function Section({
     <section
       id={title}
       ref={elementRef}
-      className={`mx-auto min-h-screen max-w-6xl content-center pt-24 pb-16 text-left lg:py-20 ${className}`}
+      className={cn(
+        "mx-auto min-h-screen max-w-6xl content-center pt-24 pb-16 text-left lg:py-20",
+        className,
+      )}
     >
       {heading && (
         <header className="mb-10">

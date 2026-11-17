@@ -26,8 +26,12 @@ function Projects({ projects }: { projects: ProjectProps[] }) {
   const [selectedProject, setSelectedProject] = useState(projects[0])
 
   return (
-    <Section title="projects" heading="Recent Projects">
-      <div className="hidden items-start gap-10 xl:grid xl:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
+    <Section
+      title="projects"
+      heading="Recent Projects"
+      className="xl:max-w-none"
+    >
+      <div className="hidden items-start gap-10 xl:grid xl:grid-cols-[22rem_minmax(0,1fr)]">
         <ol className="border-t-2">
           {projects.map((project, index) => {
             const active = project === selectedProject
@@ -60,7 +64,7 @@ function Projects({ projects }: { projects: ProjectProps[] }) {
         <ProjectCard
           key={selectedProject.company.name}
           {...selectedProject}
-          className="shadow-hard shadow-foreground motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-bottom-2"
+          className="mx-auto w-full max-w-4xl shadow-hard shadow-foreground motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-bottom-2"
         />
       </div>
 
