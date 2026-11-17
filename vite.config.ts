@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react-swc'
+import tailwindcss from '@tailwindcss/vite'
 import { VitePluginRadar } from 'vite-plugin-radar'
 import path from "path"
 
@@ -7,6 +8,7 @@ import path from "path"
 export default defineConfig({
   plugins: [
     react(),
+    tailwindcss(),
     VitePluginRadar({
       analytics: {
         id: 'G-34WVHE0Z1D',
@@ -15,7 +17,7 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
+      "@": path.resolve(import.meta.dirname, "./src"),
     },
   },
 });

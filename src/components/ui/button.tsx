@@ -1,26 +1,18 @@
-import * as React from "react"
+import { cva } from "class-variance-authority"
 
-import { cn } from "@/lib/utils"
-
-export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  className?: string
-}
-
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, ...props }, ref) => {
-    return (
-      <button
-        className={cn(
-          "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90",
-          className,
-        )}
-        ref={ref}
-        {...props}
-      />
-    )
+const buttonVariants = cva(
+  "inline-flex h-12 items-center justify-center gap-2 border-2 px-6 text-sm font-medium whitespace-nowrap shadow-hard-sm shadow-foreground transition-all hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-hard active:translate-0 active:shadow-none",
+  {
+    variants: {
+      variant: {
+        default: "bg-foreground text-background",
+        outline: "bg-background text-foreground",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+    },
   },
 )
-Button.displayName = "Button"
 
-export { Button }
+export { buttonVariants }

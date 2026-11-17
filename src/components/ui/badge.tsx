@@ -1,15 +1,11 @@
 import * as React from "react"
 import { cn } from "@/lib/utils"
 
-export interface BadgeProps extends React.HTMLAttributes<HTMLDivElement> {
-  className?: string
-}
-
-function Badge({ className, ...props }: BadgeProps) {
+function Badge({ className, ...props }: React.ComponentProps<"span">) {
   return (
-    <div
+    <span
       className={cn(
-        "inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary text-primary-foreground shadow hover:bg-primary/80",
+        "inline-flex items-center border-2 px-2 py-0.5 font-mono text-xs font-medium",
         className,
       )}
       {...props}

@@ -1,15 +1,8 @@
-import Section from "@/components/section"
 import { useState } from "react"
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
 import { TextContactLink } from "@/components/contact"
+import Section from "@/components/section"
+import { Badge } from "@/components/ui/badge"
+import { Card } from "@/components/ui/card"
 
 interface CompanyProps {
   name: string
@@ -30,47 +23,53 @@ interface ProjectProps {
 }
 
 function Projects({ projects }: { projects: ProjectProps[] }) {
-  const [selectedProject, setSelectedProject] = useState<
-    ProjectProps | undefined
-  >(undefined)
-
-  const toggleProject = (project: ProjectProps) => {
-    if (screen.width >= 768 && screen.width < 2560) {
-      if (selectedProject === project) {
-        setSelectedProject(undefined)
-      } else {
-        setSelectedProject(project)
-      }
-    } else {
-      window.open(project.company.link, "_blank")?.focus()
-    }
-  }
+  const [selectedProject, setSelectedProject] = useState(projects[0])
 
   return (
-    <Section
-      title="projects"
-      className="max-w-[1280px] xl:max-w-[1580px] m-auto"
-    >
-      <h2 className="text-2xl font-semibold">Recent Projects</h2>
-      <div className="flex flex-col md:flex-row gap-6 md:gap-2 overflow-x-auto mt-4 xl:flex-wrap xl:gap-12">
-        {projects.map((project, index) => {
-          return (
-            <ProjectCard
-              key={`project-card-${index + 1}`}
-              {...project}
-              onClick={() => toggleProject(project)}
-            />
-          )
-        })}
+    <Section title="projects" heading="Recent Projects">
+      <div className="hidden items-start gap-10 lg:grid lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
+        <ol className="border-t-2">
+          {projects.map((project, index) => {
+            const active = project === selectedProject
+            return (
+              <li key={project.company.name}>
+                <button
+                  onClick={() => setSelectedProject(project)}
+                  aria-pressed={active}
+                  className={`grid w-full grid-cols-[2.5rem_1fr_auto] items-baseline gap-x-2 border-b-2 px-3 py-4 text-left transition-colors ${active ? "bg-foreground text-background" : "hover:bg-muted"}`}
+                >
+                  <span
+                    className={`font-mono text-xs ${active ? "text-signal" : "text-muted-foreground"}`}
+                  >
+                    0{index + 1}
+                  </span>
+                  <span className="text-lg font-semibold tracking-tight">
+                    {project.company.name}
+                  </span>
+                  <span className="font-mono text-xs opacity-70">
+                    {project.start_date.slice(-4)}
+                  </span>
+                  <span className="col-start-2 text-sm opacity-70">
+                    {project.role}
+                  </span>
+                </button>
+              </li>
+            )
+          })}
+        </ol>
+        <ProjectCard
+          key={selectedProject.company.name}
+          {...selectedProject}
+          className="shadow-hard shadow-foreground motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-bottom-2"
+        />
       </div>
-      <div>
-        {selectedProject && (
-          <ProjectCard
-            {...selectedProject}
-            compactView={false}
-            className="hidden lg:block"
-          />
-        )}
+
+      <div className="flex flex-col gap-8 lg:hidden">
+        {projects
+          .filter((project) => project.show_on_mobile)
+          .map((project) => (
+            <ProjectCard key={project.company.name} {...project} />
+          ))}
       </div>
     </Section>
   )
@@ -83,110 +82,55 @@ const ProjectCard = ({
   end_date,
   key_achievements,
   stack,
-  show_on_mobile,
-  onClick = undefined,
-  compactView = true,
   className = "",
-}: ProjectProps & {
-  onClick?: () => void
-  compactView?: boolean
-  className?: string
-}) => {
+}: ProjectProps & { className?: string }) => {
   return (
-    <Card
-      className={`pb-0 xl:p-4 ${className} ${!show_on_mobile ? "hidden lg:block" : ""} ${compactView ? "shrink-0 basis-[45%] lg:basis-[30%] xl:basis-[30%] cursor-pointer" : "xl:hidden"}`}
-      onClick={onClick}
-    >
-      <CardHeader className="leading-[0.5rem] items-left">
-        {compactView && (
-          <div className="w-full">
-            <img src={company.image} className="m-auto" />
-          </div>
-        )}
-        <CardTitle
-          className={`${compactView ? "text-xl" : "text-2xl"} leading-[1.3rem]`}
-        >
-          {compactView ? (
-            company.name
-          ) : (
+    <Card className={`flex flex-col gap-5 p-6 sm:p-8 ${className}`}>
+      <header className="flex items-center gap-5">
+        <img
+          src={company.image}
+          alt=""
+          width={300}
+          height={168}
+          className="w-24 shrink-0 border-2 object-cover sm:w-32"
+        />
+        <div>
+          <p className="font-mono text-xs tracking-widest text-muted-foreground uppercase">
+            {company.location}
+          </p>
+          <h3 className="mt-1 text-2xl font-semibold tracking-tight sm:text-3xl">
             <TextContactLink link={company.link} target="_blank">
               {company.name}
             </TextContactLink>
-          )}
-        </CardTitle>
-        <CardDescription>{company.location}</CardDescription>
-      </CardHeader>
-      <CardContent className="grid gap-1 px-5">
-        <p className="text-base font-semibold leading-4">{role}</p>
-        <p className="leading-4 pb-2">
-          {start_date} - {end_date}
-        </p>
-        <p
-          className="lg:hidden pb-2 leading-[1.2rem]"
-          dangerouslySetInnerHTML={{
-            __html: `<strong>Client Overview: </strong>${company.description}`,
-          }}
-        />
-        <p
-          className="hidden 2xl:block pb-2 leading-[1.2rem]"
-          dangerouslySetInnerHTML={{
-            __html: `<strong>Client Overview: </strong>${company.description}`,
-          }}
-        />
-        <div className="lg:hidden xl:block">
-          {key_achievements.map((achievement, index) => (
-            <div
-              key={`achievement-item-${index + 1}`}
-              className="mb-4 grid grid-cols-[25px_1fr] items-start last:mb-0 last:pb-0"
-            >
-              <span className="flex h-2 w-2 translate-y-1 rounded-full bg-foreground" />
-              <div className="space-y-1">
-                <p
-                  className="text-sm font-medium leading-[1.3rem]"
-                  dangerouslySetInnerHTML={{
-                    __html: achievement,
-                  }}
-                />
-              </div>
-            </div>
-          ))}
+          </h3>
         </div>
-        {!compactView && (
-          <div className="gap-3 hidden lg:flex flex-col">
-            <div
-              className=" leading-[1.1rem]"
-              dangerouslySetInnerHTML={{
-                __html: `<strong>Client Overview: </strong>${company.description}`,
-              }}
-            />
-            <div>
-              {key_achievements.map((achievement, index) => (
-                <div
-                  key={`achievement-item-${index + 1}`}
-                  className="mb-4 grid grid-cols-[25px_1fr] items-start last:mb-0 last:pb-0"
-                >
-                  <span className="flex h-2 w-2 translate-y-1 rounded-full bg-foreground" />
-                  <div className="space-y-1">
-                    <p
-                      className="text-sm font-medium leading-[1.1rem]"
-                      dangerouslySetInnerHTML={{
-                        __html: achievement,
-                      }}
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-      </CardContent>
-      <CardFooter>
-        <div className="flex flex-wrap gap-1 mt-1 py-0">
-          {stack.map((item, index) => {
-            return <Badge key={`details-stack-item-${index + 1}`}>{item}</Badge>
-          })}
-        </div>
-      </CardFooter>
+      </header>
+      <p className="flex flex-wrap items-baseline justify-between gap-x-4 border-y-2 py-3">
+        <span className="font-semibold">{role}</span>
+        <span className="font-mono text-xs text-muted-foreground">
+          {start_date} – {end_date}
+        </span>
+      </p>
+      <p
+        className="text-sm leading-relaxed text-muted-foreground"
+        dangerouslySetInnerHTML={{ __html: company.description }}
+      />
+      <ul className="flex flex-col gap-3">
+        {key_achievements.map((achievement) => (
+          <li
+            key={achievement}
+            className="grid grid-cols-[1.25rem_1fr] text-sm leading-relaxed"
+          >
+            <span aria-hidden className="mt-2 size-2 bg-signal" />
+            <span dangerouslySetInnerHTML={{ __html: achievement }} />
+          </li>
+        ))}
+      </ul>
+      <div className="flex flex-wrap gap-2">
+        {stack.map((item) => (
+          <Badge key={item}>{item}</Badge>
+        ))}
+      </div>
     </Card>
   )
 }

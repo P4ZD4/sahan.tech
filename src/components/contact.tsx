@@ -1,11 +1,12 @@
 import { PropsWithChildren } from "react"
-import { Github, Linkedin, Mail, Phone } from "lucide-react"
+import { GitHubLogoIcon, LinkedInLogoIcon } from "@radix-ui/react-icons"
+import { ArrowUpRight, Mail, Phone } from "lucide-react"
 
+import { buttonVariants } from "@/components/ui/button"
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
-  DialogHeader,
+  DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
 
@@ -20,30 +21,50 @@ const ContactUsDialog = ({
   phone: string
   repo: string
 }) => {
+  const links = [
+    {
+      href: linkedin,
+      label: "Let’s connect on LinkedIn",
+      icon: <LinkedInLogoIcon className="size-5" />,
+    },
+    {
+      href: `mailto:${email}`,
+      label: "Drop me an email",
+      icon: <Mail size={20} />,
+    },
+    { href: `tel:${phone}`, label: "Let’s chat", icon: <Phone size={20} /> },
+    {
+      href: repo,
+      label: "Check out my GitHub",
+      icon: <GitHubLogoIcon className="size-5" />,
+    },
+  ]
+
   return (
     <Dialog>
-      <DialogTrigger>Contact</DialogTrigger>
-      <DialogContent>
-        <DialogHeader>
-          <DialogDescription className="flex flex-col gap-4 mt-10">
-            <IconButtonContactLink link={linkedin} target="_blank">
-              <Linkedin />
-              Let’s connect on LinkedIn!
-            </IconButtonContactLink>
-            <IconButtonContactLink link={`mailto:${email}`} target="_blank">
-              <Mail />
-              Drop me an mail
-            </IconButtonContactLink>
-            <IconButtonContactLink link={`tel:${phone}`} target="_blank">
-              <Phone />
-              Let’s chat!
-            </IconButtonContactLink>
-            <IconButtonContactLink link={repo} target="_blank">
-              <Github />
-              Check out my GitHub
-            </IconButtonContactLink>
-          </DialogDescription>
-        </DialogHeader>
+      <DialogTrigger className={buttonVariants({ variant: "outline" })}>
+        Get in touch
+      </DialogTrigger>
+      <DialogContent aria-describedby={undefined}>
+        <DialogTitle>Let’s talk</DialogTitle>
+        <div className="flex flex-col gap-3">
+          {links.map(({ href, label, icon }) => (
+            <a
+              key={href}
+              href={href}
+              target={href.startsWith("http") ? "_blank" : undefined}
+              rel="noreferrer"
+              className="group flex h-14 items-center gap-4 border-2 px-5 font-medium transition-colors hover:bg-foreground hover:text-background"
+            >
+              {icon}
+              {label}
+              <ArrowUpRight
+                size={18}
+                className="ml-auto transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+              />
+            </a>
+          ))}
+        </div>
       </DialogContent>
     </Dialog>
   )
@@ -56,25 +77,9 @@ const TextContactLink = ({
 }: PropsWithChildren<{ link: string; target: string }>) => {
   return (
     <a
-      className="underline-none text-blue-600 hover:text-blue-600 visited:text-purple-600"
+      className="underline decoration-signal decoration-2 underline-offset-4 transition-colors hover:text-signal"
       target={target}
-      href={link}
-    >
-      {children}
-    </a>
-  )
-}
-
-const IconButtonContactLink = ({
-  link,
-  target,
-  children,
-}: PropsWithChildren<{ link: string; target: string }>) => {
-  return (
-    <a
-      className="text-blue-600 hover:text-blue-600
-      visited:text-purple-600 flex gap-4 py-4items-center w-full h-12 bg-foreground text-[color:hsl(var(--primary-foreground))] hover:bg-muted-foreground items-center px-8"
-      target={target}
+      rel="noreferrer"
       href={link}
     >
       {children}

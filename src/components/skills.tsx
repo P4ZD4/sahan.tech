@@ -1,10 +1,5 @@
 import Section from "@/components/section"
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardTitle,
-} from "@/components/ui/card"
+import { Card } from "@/components/ui/card"
 import { Progress } from "@/components/ui/progress"
 
 interface FrameworkProps {
@@ -20,41 +15,38 @@ interface SkillProps {
 
 function Skills({ skills }: { skills: SkillProps[] }) {
   return (
-    <Section
-      title="skills"
-      className="max-w-[960px] pb-12 m-auto content-center"
-    >
-      <h2 className="text-2xl font-semibold mb-4">Areas of Expertise</h2>
-
-      <div className="flex gap-4 gap-y-8 flex-wrap">
-        {skills.map((skill, index) => {
-          return (
-            <Card
-              key={`skill-item-${index + 1}`}
-              className="basis-[100%] sm:basis-[48%] p-2"
-            >
-              <CardTitle className="text-xl mb-4">{skill.skill}</CardTitle>
-              {skill.proficiency && (
-                <CardDescription>
-                  <Progress value={(skill.proficiency ?? 0) * 100} />
-                </CardDescription>
-              )}
-              <CardContent className="flex flex-col gap-4">
-                {skill.frameworks.map((framework, innerIndex) => {
-                  return (
-                    <div
-                      key={`skill-framework-item-${innerIndex + 1}`}
-                      className="flex flex-col gap-2"
-                    >
-                      <h2>{framework.name}</h2>
-                      <Progress value={(framework.proficiency ?? 0) * 100} />
-                    </div>
-                  )
-                })}
-              </CardContent>
-            </Card>
-          )
-        })}
+    <Section title="skills" heading="Areas of Expertise">
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {skills.map((skill) => (
+          <Card
+            key={skill.skill}
+            className="flex flex-col gap-5 p-6 transition-all hover:-translate-y-1 hover:shadow-hard hover:shadow-foreground"
+          >
+            <header className="flex items-baseline justify-between gap-4">
+              <h3 className="text-xl font-semibold tracking-tight">
+                {skill.skill}
+              </h3>
+              <span className="font-mono text-xs tracking-widest text-muted-foreground uppercase">
+                {skill.type}
+              </span>
+            </header>
+            {skill.proficiency !== undefined && (
+              <Progress
+                value={skill.proficiency * 100}
+                aria-label={skill.skill}
+              />
+            )}
+            {skill.frameworks.map((framework) => (
+              <div key={framework.name} className="flex flex-col gap-2">
+                <span className="text-sm">{framework.name}</span>
+                <Progress
+                  value={(framework.proficiency ?? 0) * 100}
+                  aria-label={framework.name}
+                />
+              </div>
+            ))}
+          </Card>
+        ))}
       </div>
     </Section>
   )

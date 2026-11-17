@@ -1,44 +1,47 @@
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useRef } from "react"
 
 function Section({
   title,
+  heading,
   children,
-  className = undefined,
-}: React.PropsWithChildren<{ title: string; className?: string }>) {
-  const elementRef = useRef<HTMLDivElement>(null)
-  const [inView, setInView] = useState(false)
+  className = "",
+}: React.PropsWithChildren<{
+  title: string
+  heading?: string
+  className?: string
+}>) {
+  const elementRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
-    const handleScroll = () => {
-      const element = elementRef.current
-      if (element) {
-        const top = element.offsetTop - screen.height / 2
-        const bottom =
-          element.offsetTop + element.offsetHeight - screen.height / 2
-        const documentScroll = window.scrollY
-
-        if (!inView && top <= documentScroll && bottom >= documentScroll) {
-          setInView(true)
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && window.location.hash !== `#${title}`) {
           history.replaceState({}, "", `#${title}`)
           window.dispatchEvent(new HashChangeEvent("hashchange"))
         }
-        if (inView && (top > documentScroll || bottom < documentScroll)) {
-          setInView(false)
-        }
-      }
-    }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [inView, setInView])
+      },
+      { rootMargin: "-50% 0px -50% 0px" },
+    )
+    if (elementRef.current) observer.observe(elementRef.current)
+    return () => observer.disconnect()
+  }, [title])
 
   return (
-    <div
+    <section
       id={title}
       ref={elementRef}
-      className={`min-h-screen text-foreground text-left pt-20 lg:pt-10 ${className}`}
+      className={`mx-auto min-h-screen max-w-6xl content-center pt-24 pb-16 text-left lg:py-20 ${className}`}
     >
+      {heading && (
+        <header className="mb-10">
+          <h2 className="text-4xl font-semibold tracking-tight sm:text-5xl">
+            {heading}
+          </h2>
+          <span aria-hidden className="mt-4 block h-2 w-16 bg-signal" />
+        </header>
+      )}
       {children}
-    </div>
+    </section>
   )
 }
 

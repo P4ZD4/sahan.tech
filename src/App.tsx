@@ -1,11 +1,10 @@
-import "@/App.css"
-import { useTheme } from "@/components/theme-provider"
-import { Toggle } from "@/components/ui/toggle"
-import { SunMoon } from "lucide-react"
-import Menu from "@/components/navigation/menu"
+import { Moon, Sun } from "lucide-react"
 import About from "@/components/about"
+import Menu from "@/components/navigation/menu"
 import Projects, { CompanyProps, ProjectProps } from "@/components/projects"
 import Skills from "@/components/skills"
+import { useTheme } from "@/components/theme-provider"
+import { Toggle } from "@/components/ui/toggle"
 
 import Resume from "@/data/resume.json"
 
@@ -16,31 +15,30 @@ type Experience =
     }
   | ProjectProps
 
-function App() {
-  const { toggleTheme } = useTheme()
-  const resume = Resume
+const getProjects = (experiences: Experience[]) =>
+  experiences.flatMap((experience) =>
+    "projects" in experience ? experience.projects : [],
+  )
 
-  const getProjects = (experiences: Experience[]) => {
-    return experiences.reduce((prev, experience) => {
-      return [...prev, ...("projects" in experience ? experience.projects : [])]
-    }, [] as ProjectProps[])
-  }
+function App() {
+  const { isDarkMode, toggleTheme } = useTheme()
 
   return (
     <>
       <Toggle
-        className="fixed top-0 right-0 m-4 p-0 h-8 w-8 z-20 bg-background color-foreground"
-        onClick={() => toggleTheme()}
+        aria-label={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
+        className="fixed top-2 right-3 z-30 size-10 border-2 border-foreground bg-background text-foreground transition-transform hover:-translate-y-0.5 lg:top-6 lg:right-6"
+        onClick={toggleTheme}
       >
-        <SunMoon />
+        {isDarkMode ? <Sun size={18} /> : <Moon size={18} />}
       </Toggle>
 
       <Menu />
-      <div className="lg:ml-[15rem] px-10">
-        <About {...resume} />
-        <Projects projects={getProjects(resume.experience)} />
-        <Skills skills={resume.skills} />
-      </div>
+      <main className="px-6 sm:px-10 lg:ml-60 lg:px-16">
+        <About {...Resume} />
+        <Projects projects={getProjects(Resume.experience)} />
+        <Skills skills={Resume.skills} />
+      </main>
     </>
   )
 }

@@ -1,24 +1,19 @@
 import globals from 'globals'
 import pluginJs from '@eslint/js'
 import tseslint from 'typescript-eslint'
-import pluginReact from 'eslint-plugin-react'
+import eslintReact from '@eslint-react/eslint-plugin'
+import reactHooks from 'eslint-plugin-react-hooks'
 
 export default [
   { files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'] },
   { languageOptions: { globals: globals.browser } },
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
-  pluginReact.configs.flat.recommended,
+  eslintReact.configs['recommended-typescript'],
+  reactHooks.configs.flat.recommended,
   {
-    settings: {
-      react: {
-        version: 'detect'
-      }
-    },
     rules: {
-      'react/react-in-jsx-scope': 'off',
-      'react/jsx-uses-react': 'error',
-      'react/jsx-uses-vars': 'error',
+      '@eslint-react/dom-no-dangerously-set-innerhtml': 'off',
       'sort-imports': 
         [
           "error", 

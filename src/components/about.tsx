@@ -1,15 +1,7 @@
-import Section from "@/components/section"
-import { Mail, MapPinHouse } from "lucide-react"
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
+import { Download } from "lucide-react"
 import { ContactUsDialog, TextContactLink } from "@/components/contact"
-import { Button } from "@/components/ui/button"
+import Section from "@/components/section"
+import { buttonVariants } from "@/components/ui/button"
 
 interface ContactProps {
   email: string
@@ -35,24 +27,45 @@ interface AboutProps {
 
 function About({ name, role, contact, summary, education }: AboutProps) {
   return (
-    <Section title="about-me" className="content-center max-w-[960px] m-auto">
-      <div className="flex flex-col md:flex-row gap-8">
-        <div className="flex flex-col gap-4 basis-[80%]">
-          <div className="flex flex-row max-[500px]:flex-col gap-4">
-            <div className="basis-[60%]">
-              <img
-                src="/profile.webp"
-                alt="Profile Picture"
-                className="min-[500px]:max-w-100 bg-[#2C3E50] border text-card-foreground shadow"
-              />
-            </div>
-            <div className="content-end">
-              <Contact name={name} role={role} {...contact} />
-            </div>
+    <Section title="about-me">
+      <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-16">
+        <img
+          src="/profile.webp"
+          alt={name}
+          width={744}
+          height={949}
+          className="mx-auto w-full max-w-72 border-2 bg-[#2C3E50] shadow-hard shadow-signal sm:max-w-sm lg:max-w-none motion-safe:animate-in motion-safe:duration-700 motion-safe:fade-in"
+        />
+        <div className="flex flex-col gap-6 motion-safe:animate-in motion-safe:duration-700 motion-safe:fade-in motion-safe:slide-in-from-bottom-4">
+          <p className="flex items-center gap-3 font-mono text-sm text-muted-foreground">
+            <span aria-hidden className="size-2 bg-signal" />
+            {role} · {contact.address}
+          </p>
+          <h1 className="text-5xl leading-[0.95] font-semibold tracking-tight sm:text-7xl">
+            {name}
+          </h1>
+          <p
+            className="max-w-prose text-lg leading-relaxed text-muted-foreground [&_strong]:font-semibold [&_strong]:text-foreground"
+            dangerouslySetInnerHTML={{ __html: summary }}
+          />
+          <div className="flex flex-wrap gap-4">
+            <a
+              href="/Sahan - Resume.pdf"
+              download="Sahan - Resume.pdf"
+              className={buttonVariants()}
+            >
+              <Download size={16} />
+              Download Résumé
+            </a>
+            <ContactUsDialog {...contact} />
           </div>
-          <Summary summary={summary} />
+          <p className="font-mono text-sm">
+            <TextContactLink link={`mailto:${contact.email}`} target="">
+              {contact.email}
+            </TextContactLink>
+          </p>
+          <Education education={education} />
         </div>
-        <Education education={education} />
       </div>
     </Section>
   )
@@ -60,88 +73,20 @@ function About({ name, role, contact, summary, education }: AboutProps) {
 
 const Education = ({ education }: { education: EducationProps[] }) => {
   return (
-    <div className="content-end">
-      <h3 className="font-semibold text-xl pb-2">Education</h3>
-      {education.map((item, index) => {
-        return <EducationItem key={`education-item-${index + 1}`} {...item} />
-      })}
-    </div>
+    <dl className="mt-2 grid gap-2 border-t-2 pt-5">
+      <dt className="font-mono text-xs tracking-widest text-muted-foreground uppercase">
+        Education
+      </dt>
+      {education.map((item) => (
+        <dd key={item.school}>
+          <p className="font-semibold">{item.degree}</p>
+          <p className="text-sm text-muted-foreground">
+            {item.school}, {item.location} · {item.start_date} – {item.end_date}
+          </p>
+        </dd>
+      ))}
+    </dl>
   )
 }
 
-const EducationItem = ({
-  school,
-  location,
-  degree,
-  start_date,
-  end_date,
-}: EducationProps) => {
-  return (
-    <Card>
-      <CardHeader className="leading-3">
-        <CardTitle>{school}</CardTitle>
-        <CardDescription>{location}</CardDescription>
-      </CardHeader>
-      <CardContent>
-        <p>
-          {start_date} - {end_date}
-        </p>
-        <p>{degree}</p>
-      </CardContent>
-    </Card>
-  )
-}
-
-const Contact = ({
-  name,
-  role,
-  email,
-  phone,
-  address,
-  linkedin,
-  repo,
-}: { name: string; role: string } & ContactProps) => {
-  return (
-    <Card className="pb-0">
-      <CardHeader className="gap-1">
-        <CardTitle className="text-2xl leading-6">{name}</CardTitle>
-        <CardDescription className="text-base leading-4">
-          {role}
-        </CardDescription>
-      </CardHeader>
-      <CardContent className="leading-6 font-center pb-2">
-        <p className="flex items-center">
-          <Mail size={16} />
-          <TextContactLink link={`mailto:${email}`} target="">
-            &nbsp;{email}
-          </TextContactLink>
-        </p>
-        <p className="flex items-center">
-          <MapPinHouse size={16} />
-          &nbsp;{address}
-        </p>
-      </CardContent>
-      <CardFooter className="flex flex-col gap-2 items-start">
-        <a
-          href="/Sahan - Resume.pdf"
-          download="Sahan - Resume.pdf"
-          target="_blank"
-        >
-          <Button>Download Résumé</Button>
-        </a>
-        <ContactUsDialog {...{ linkedin, email, phone, repo }} />
-      </CardFooter>
-    </Card>
-  )
-}
-
-const Summary = ({ summary }: { summary: string }) => {
-  return (
-    <Card>
-      <CardContent className="pt-3 leading-[1.3rem]">
-        <p dangerouslySetInnerHTML={{ __html: summary }}></p>
-      </CardContent>
-    </Card>
-  )
-}
 export default About
