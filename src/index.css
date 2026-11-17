@@ -62,7 +62,13 @@
     @apply border-border;
   }
   html {
-    @apply scroll-smooth antialiased;
+    @apply antialiased;
+    @media (width >= 1920px) {
+      font-size: 112.5%;
+    }
+    @media (width >= 2560px) {
+      font-size: 125%;
+    }
   }
   body {
     @apply bg-background font-sans text-foreground transition-colors;

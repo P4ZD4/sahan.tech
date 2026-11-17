@@ -74,11 +74,11 @@ function Menu() {
         />
         <div
           aria-hidden
-          className="absolute top-1/2 -right-1 translate-x-1/2 -translate-y-1/2 rotate-180 bg-background pt-8 pb-8 [writing-mode:vertical-rl]"
+          className="absolute top-1/2 -right-1 translate-x-1/2 -translate-y-1/2 rotate-180 bg-background pt-6 pb-6 [writing-mode:vertical-rl]"
         >
           <span
             key={currentPage}
-            className="block text-[3.5rem] leading-none font-medium tracking-tight motion-safe:animate-in motion-safe:duration-500 motion-safe:fade-in motion-safe:slide-in-from-top-8"
+            className="block text-[clamp(2rem,8vh,3.5rem)] leading-none font-medium tracking-tight whitespace-nowrap motion-safe:animate-in motion-safe:duration-500 motion-safe:fade-in motion-safe:slide-in-from-top-8"
           >
             {toLabel(currentPage)}
           </span>

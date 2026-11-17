@@ -27,7 +27,7 @@ function Projects({ projects }: { projects: ProjectProps[] }) {
 
   return (
     <Section title="projects" heading="Recent Projects">
-      <div className="hidden items-start gap-10 lg:grid lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
+      <div className="hidden items-start gap-10 xl:grid xl:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
         <ol className="border-t-2">
           {projects.map((project, index) => {
             const active = project === selectedProject
@@ -64,7 +64,7 @@ function Projects({ projects }: { projects: ProjectProps[] }) {
         />
       </div>
 
-      <div className="flex flex-col gap-8 lg:hidden">
+      <div className="flex flex-col gap-8 xl:hidden">
         {projects
           .filter((project) => project.show_on_mobile)
           .map((project) => (
