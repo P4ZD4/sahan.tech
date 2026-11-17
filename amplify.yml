@@ -4,7 +4,7 @@ frontend:
         preBuild:
             commands:
                 - 'nvm install 22'
-                - 'npm install -g pnpm'
+                - 'npm install -g pnpm@12'
                 - 'pnpm install'
         build:
             commands:
